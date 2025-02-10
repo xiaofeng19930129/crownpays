@@ -1,0 +1,361 @@
+<div class="panel panel-default panel-intro">
+    <style type="text/css" media="all">
+        body {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.box {
+	overflow-y: auto;
+	background: #FFFFFF;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	padding: 20px;
+}
+
+.cur-state {
+	font-size: 16px;
+	font-weight: bold;
+	color: #00CE9B;
+	padding: 20px 0 0 24px;
+}
+
+.state-box {
+	display: flex;
+	justify-content: space-around;
+	width: 588px;
+	margin: auto;
+	margin-top: 16px;
+	padding: 0 24px;
+}
+
+.state-time-box {
+	display: flex;
+	justify-content: space-around;
+	width: 683px;
+             /* width:588px; */
+	margin: auto;
+	margin-top: 3px;
+	padding: 0 24px;
+	text-align: center;
+}
+
+.state-time {
+	font-size: 12px;
+	font-weight: 400;
+	color: #999999;
+	width: 133px;
+}
+
+.each-state {
+	width: 60px;
+}
+
+.state-img {
+	width: 16px;
+	height: 16px;
+ /* background: #00CE9B; */
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	display: block;
+	margin: auto;
+}
+
+.state-text {
+	font-size: 12px;
+	margin-top: 8px;
+	font-weight: 400;
+	text-align: center;
+	color: #999999;
+}
+
+.cur-text {
+	color: #00CE9B;
+    width: 60px;
+}
+
+.wire {
+	width: 70px;
+	height: 0px;
+	opacity: 1;
+	border: 1px solid #DCDEE5;
+	margin-top: 6px;
+}
+
+.gap1 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-top: 28px;
+}
+         /* 订单信息 */.order-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.order-info-head-text-4 {
+	flex: 4;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.order-info-head-text-2 {
+	flex: 1;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.order-info-matter {
+	display: flex;
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+}
+
+.gap2 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+ /*
+        margin-top: 28px; */;
+} /* 项目信息 */.item-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.item-info-head {
+	display: flex;
+	border-top: 1px solid #EEEEEE;
+	border-left: 1px solid
+        #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+	margin-top: 16px;
+}
+
+.item-info-head-text-5 {
+	flex: 5;
+	text-align: center;
+	border-right: 1px solid #EEEEEE;
+}
+
+.item-info-head-text-2 {
+	flex: 2;
+	text-align: center;
+}
+
+.item-info-head-text-1 {
+	flex: 2;
+	text-align: center;
+}
+
+.serve-list {
+	display: flex;
+	height: 58px;
+	align-items: center;
+}
+
+.item-info-matter-text-5 {
+	flex: 5;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	border-right: 1px solid #EEEEEE;
+	display: flex;
+	justify-content: center;
+}
+
+.item-info-matter-text-2 {
+	flex: 2;
+	text-align: center;
+	line-height: 58px;
+}
+
+.border-lr {
+	border-left: 1px
+        solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+} /* .item-info-matter-text-1
+        { flex: 2; text-align: center; } */.item-info-matter {
+	display: flex;
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+}
+
+.item-info-matter-img {
+	width: 38px;
+	height: 38px;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-right: 12px;
+}
+
+.increase {
+	width: 32px;
+	height: 18px;
+	background: #EDEEF1;
+	border-radius: 3px 3px
+        3px 3px;
+	opacity: 1;
+	text-align: center;
+	line-height: 18px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #A4A9B7;
+	margin-left: 8px;
+}  /* 佣金 */
+.item-info-yj-text-1 {
+	flex: 1;
+	text-align: center;
+}
+
+.border-l {
+	border-left: 1px solid #EEEEEE;
+}
+
+.text-red {
+	color: #FF1F2B;
+}
+
+div::-webkit-scrollbar {
+	width: 4px;
+} /* // 滚动条轨道 */div::-webkit-scrollbar-track {
+	background: #FFF;
+	border-radius: 2px;
+} /* // 小滑块 */div::-webkit-scrollbar-thumb {
+	background: #D9D9D9;
+	border-radius: 10px;
+}
+
+.titles {
+	font-size: 14px;
+}
+
+.img-box {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.photo {
+	width: 100px;
+	height: 100px;
+	margin: 0 8px 8px 0;
+}
+    </style>
+<style>
+    .automatic {
+        font-size: 20px;
+        /* display: inline-block; */
+        position: relative;
+        width: 144px;
+        margin: 0 auto;
+    }
+    .automatic::after {
+        content: '...';
+        display: inline-block;
+        /* width: 1em;  */
+        overflow: hidden;
+        white-space: nowrap;
+        animation: dotBounce 1s infinite;
+    }
+    @keyframes dotBounce {
+        0%, 100% {
+            content: '.';
+        }
+        33% {
+            content: '..';
+        }
+        66% {
+            content: '...';
+        }
+    }
+</style>
+    <div class="box">
+        <!-- 订单信息 -->
+        <div class="order-info-box">
+            <div class="title">
+                订单信息
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Sn')}：<span class="order_sn"></span>
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Order amount(Naria)')}：<span class="order_naira"></span>
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Order amount(USDT)')}：<span class="order_usdt"></span>
+                </div>
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Users')}：<span class="order_username"></span>
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Createtime')}：<span class="order_createtime"></span>
+                </div>
+                <div class="order-info-head-text-4">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="gap2">
+        </div>
+        <div class="item-info-box automatic-box">
+            <div class="automatic">接单中</div>
+        </div>
+        <div class="item-info-box">
+            <form id="automatic-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="order/proof">
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <textarea id="c-content" class="form-control editor" rows="5" cols="50" readonly></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="c-voucher" class="control-label col-xs-12 col-sm-2">{:__('Voucher')}:</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="input-group">
+                            <input id="c-voucher" data-rule="" class="form-control" size="50" name="row[voucher]" type="text" value="">
+                            <div class="input-group-addon no-border no-padding">
+                                <span><button type="button" id="faupload-voucher" class="btn btn-danger faupload" data-input-id="c-voucher" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-voucher"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                <span><button type="button" id="fachoose-voucher" class="btn btn-primary fachoose" data-input-id="c-voucher" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                            </div>
+                            <span class="msg-box n-right" for="c-voucher"></span>
+                        </div>
+                        <ul class="row list-inline faupload-preview" id="p-voucher"></ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-12 col-sm-2"></label>
+                    <div class="col-xs-12 col-sm-8">
+                        <button type="submit" class="btn btn-primary btn-embossed">{:__('OK')}</button>
+                        <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

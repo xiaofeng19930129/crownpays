@@ -1,0 +1,378 @@
+<style>
+    .content{
+        padding:0 !important;
+    }
+    #content-container{
+        width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .home_one {
+        width: 100%;
+        height: 414px;
+        background: #f9f9f9;
+        background: url(https://m.uxpay.com/img/banner.0c0bbc8b.png) no-repeat 50%;
+        background-size:100%;
+    }
+    
+     /* .two_content>div:not(:last-child) {
+        margin-right: 25px
+    } */
+    
+    .two-line{
+        /* width: 1200px; */
+        padding:0 10px 0 50px;
+    
+        font-size: 15px;
+        font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+        font-weight: 400;
+        text-align: left;
+        color: #fff;
+        line-height: 25px;
+    }
+     .box {
+        width: 280px;
+        height: 318px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding-top: 30px;
+        border-top:0;
+    }
+    
+    .box-module:hover {
+        background: linear-gradient(0deg,#096ddc,#3ed8be);
+        color: #fff;
+    }
+    .box .icon {
+        width: 73px;
+        height: 73px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid #d2d2d2;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    
+    .title {
+        font-size: 15px;
+        font-family: Source Han Sans CN,Source Han Sans CN-Bold;
+        font-weight: 700;
+        text-align: left;
+        color: #333;
+        padding: 25px 10px 0 50px;
+    }
+    
+     .box p {
+        font-size: 16px;
+        color: #333;
+        line-height: 24px;
+        margin-top: 20px
+    }
+    
+     .el-button,.box p {
+        font-family: Source Han Sans CN,Source Han Sans CN-Regular;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .el-button {
+        width: 135px;
+        height: 38px;
+        background: #fff;
+        border: 1px solid #d2d2d2;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #15bc83;
+        margin-top: 26px
+    }
+    
+    .home_two{
+        width: 100%;
+        height: 400px;
+        margin: 20px auto;
+    }
+    .panel-default {
+      padding: 0 15px;
+      border: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    .panel-default > .panel-heading {
+      position: relative;
+      font-size: 16px;
+      padding: 15px 0;
+      background: #fff;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .panel-default h2.page-header {
+      margin-top: 0;
+      height: 50px;
+      line-height: 31px;
+      font-size: 18px;
+      padding: 10px 0 10px 17%;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .panel-default > .panel-heading .panel-title {
+      color: #313131;
+    }
+    .panel-default > .panel-heading .panel-title > i {
+      display: none;
+    }
+    .panel-default > .panel-heading .more {
+      position: absolute;
+      top: 13px;
+      right: 0;
+      display: block;
+      color: #919191;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    .panel-default > .panel-heading .more:hover {
+      color: #616161;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    .panel-default > .panel-heading .panel-bar {
+      position: absolute;
+      top: 7px;
+      right: 0;
+      display: block;
+    }
+    .form-btn{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .home_three{
+        padding: 20px;
+        background: #fff;
+        margin: 20px auto;
+    }
+    .orderlist{
+        width: 70%;
+        margin: 0 auto;
+        border-left: 1px solid #EEEEEE;
+        border-top: 1px solid #EEEEEE;
+        
+    }
+    .order-title{
+        border-bottom: 1px solid #EEEEEE;
+        border-right: 1px solid #EEEEEE;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .order-head{
+        display: flex;
+    }
+    .item-head{
+        flex: 1;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        border-right: 1px solid #EEEEEE;
+        border-bottom: 1px solid #EEEEEE;
+    }
+    .order-line{
+        display: flex;    
+    }
+    .item-text{
+        flex: 1;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        border-right: 1px solid #EEEEEE;
+        border-bottom: 1px solid #EEEEEE;
+    }
+    .order-footer{
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+        
+    }
+    .order-footer a{
+        color: #616161 !important;
+    }
+    @keyframes ambottom {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px)
+        }
+    
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+    
+    @keyframes amleft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px)
+        }
+    
+        to {
+            opacity: 1;
+            transform: translateX(0)
+        }
+    }
+    
+    </style>
+    <div id="content-container" class="container">
+        <div class="home_one">
+            <div class="title w1200">
+                <p>{:__('Naira payment, one-stop solution')}</p>
+                <p>{:__('Comprehensive payment product matrix, fully empowering you to expand international business and enabling enterprises to grow globally at low cost and high efficiency')}</p>
+            </div>
+            <div class="two-line">
+                <!-- <div class="two-line-1">今日汇率</div>
+                <div class="two-line-2">{:date('m月d日')} &nbsp;星期{$weekDayChinese}  </div>
+                <div class="two-line-2">实时汇率：</div>
+                <div class="two-line-3">1USDT={$firstMember['USDCNY']}&nbsp;人民币</div>
+                <div class="two-line-3">1USDT={$firstMember['NGNUSD']}&nbsp;奈拉</div>
+                <div class="two-line-5">1人民币={$firstMember['NGNCNY']}&nbsp;奈拉</div>
+                <div class="two-line-6">!!（汇率仅供参考，实际以官方为准）</div> -->
+
+                <div class="two-line-1">{:__('Today exchange rate')}</div>
+                <div class="two-line-2">{:date('m')}{:__('Month')}{:date('d')}{:__('Day')} &nbsp;{$weekDayChinese}  </div>
+                <div class="two-line-2">{:__('Real time exchange rate')}：</div>
+                <div class="two-line-3">1USDT={$firstMember['USDCNY']}&nbsp;{:__('RMB')}</div>
+                <div class="two-line-3">1USDT={$firstMember['NGNUSD']}&nbsp;{:__('Naira')}</div>
+                <div class="two-line-5">1{:__('RMB')}={$firstMember['NGNCNY']}&nbsp;{:__('Naira')}</div>
+                <div class="two-line-6">!!（{:__('The exchange rate is for reference only, and the actual amount shall be subject to official records')}）</div>
+                <div class="two-line-6"></div>
+            </div>
+        </div>
+    
+        <div class="home_two" id="home_two">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">{:__('Order recharge')}</h2>
+                    <form id="order-form" class="form-horizontal nice-validator n-default n-bootstrap" role="form" method="post" action="/index/ajax/create" data-toggle="validator" novalidate="novalidate">
+                        {:token()}      
+                        <div class="form-group">
+                            <label for="c-content" class="control-label col-xs-12 col-sm-2">{:__('Recharge information')}：</label>
+                            <div class="col-xs-12 col-sm-4">
+                                <textarea name="content" class="form-control" data-rule="required" id="c-content" cols="30" rows="6" placeholder="{:__('give an example')}：
+    Abdulhumid Salisu 
+    1445928638
+    Access bank      
+    {:__('The order of username, card number, and bank name can be arbitrary')}"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-naira" class="control-label col-xs-12 col-sm-2">{:__('Number of Naira')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-naira" data-rule="required" placeholder="{:__('Please enter the quantity of naira')}" class="form-control" name="naira" type="number" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-expense_type" class="control-label col-xs-12 col-sm-2">{:__('Type of handling fee')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                
+                                <div class="radio">
+                                    <label for="expense_type-2">
+                                        <input id="expense_type-2" name="expense_type" class="expense_type" type="radio" value="2" checked="checked"> {$iConfig.expense_two}{:__('Naira')}
+                                    </label>
+                                    <label for="expense_type-1">
+                                        <input id="expense_type-1" name="expense_type" class="expense_type" type="radio" value="1"> {$iConfig.expense_one_fixed}{:__('Naira')} + {$iConfig.expense_one_permillage}/1000{:__('Naira')}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        {if($user)}
+    
+                        <!-- 如果已经登录了,就显示当前的汇率 -->
+                        <div class="form-group">
+                            <label for="c-expense_type" class="control-label col-xs-12 col-sm-2">{:__('Notes')}：</label>
+                            <div class="col-xs-12 col-sm-8" style="height: 29px;line-height: 1em;padding-top: 2px;">
+                                {:__('Your current membership level is level %s, and the exchange rate you can enjoy is: %s',[$user['member']['level'],$user['member']['NGNUSD']])}
+                            </div>
+                        </div>
+                        {/if}
+                        
+                        <div class="form-group normal-footer">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Subtotal')}：</label>
+                            <div class="col-xs-12 col-sm-4">
+                                <!-- <span>USDT：</span><span class="totalNaira" style="color: red;">0</span> -->
+                                <span>&nbsp;{:__('charge for trouble')}：</span><span class="totalExpense" style="color: red;">0</span>
+                                <span>&nbsp;{:__('Total Naira')}：</span><span class="totalNaira" style="color: red;">0</span>
+                                <span>&nbsp;{:__('Total USDT')}：</span><span class="totalUsdt" style="color: red;">0</span>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="c-expense_type" class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-8 form-btn">
+                                <button type="reset" class="btn btn-default btn-embossed btnReset">{:__('Reset')}</button>
+                                <button type="submit" class="btn btn-primary btn-embossed">{:__('Submit')}</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="width: 100px;height: 50px;">
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        {if($orderList->total())}
+        <div class="home_three" style="display: none;">
+            <div class="orderlist">
+                <div class="order-title">
+                    {:__('Order list')}
+                </div>
+                <div class="order-head">
+                    <div class="item-head">
+                        {:__('Number of Naira')}
+                    </div>
+                    <div class="item-head">
+                        {:__('Charge for trouble')}
+                    </div>
+                    <div class="item-head">
+                        {:__('Total order amount(USDT)')}
+                    </div>
+                    <div class="item-head">
+                        {:__('Order time')}
+                    </div>
+                </div>
+                {volist name="orderList" id="item"}
+                <div class="order-line">
+                    <div class="item-text">
+                        {$item.naira}
+                    </div>
+                    <div class="item-text">
+                        {$item.total_expense}
+                    </div>
+                    <div class="item-text">
+                        {$item.usdt}
+                    </div>
+                    <div class="item-text">
+                        {:date("Y-m-d H:i:s",$item.createtime)}
+                    </div>
+                </div>
+                {/volist}
+                <div class="order-footer">
+                    <a href="/index/user/order">{:__('More orders')}>></a>
+                    
+                </div>
+            </div>
+        </div>
+        {/if}
+    </div>
+    <!-- 
+    <div class="customer" style="display: none;">
+        <img src="/assets/img/avatar.png" alt="">
+    </div> -->

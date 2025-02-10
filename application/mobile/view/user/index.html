@@ -1,0 +1,106 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row > .col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row > div {
+        margin: 5px 0;
+    }
+    .list-group{
+        overflow: hidden;
+        
+    }
+    .list-group-item{
+        border: 0;
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        margin-bottom: 0;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd !important;
+    }
+    .list-group-item a{
+        color: #616161;
+    }
+    
+    .fa-angle-right{
+        height: 22px;
+        float: right;
+    }
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('User center')}
+                        <a href="javascript:;" class="btn btn-primary pull-right rechargeNow"><i class="fa fa-money"></i> {:__('Recharge now')}</a>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        <div class="col-md-3 col-sm-3 col-xs-3 text-center user-center">
+                            <a href="{:url('user/profile')}" title="{:__('Click to edit')}">
+                                <span class="avatar-img"><img src="{$user.avatar|htmlentities|cdnurl}" alt=""></span>
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                            <div class="ui-content">
+                                <h4><a href="{:url('user/profile')}">{$user.username|htmlentities}</a></h4>
+                                <!-- <p class="text-muted">
+                                    {$user.bio|default=__("This guy hasn't written anything yet")|htmlentities}
+                                </p> -->
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="ui-content">
+                                <div class="basicinfo">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Money')}(USDT)</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewmoney">{$user.usdt}</a>
+                                        </div>
+                                        <div class="col-xs-4 col-md-2">{:__('Order Quantity')}</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewscore">{$user.order_num}</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Invite code')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.code}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Inviter')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.inviter}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Logintime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.logintime|date="Y-m-d H:i:s",###}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Prevtime')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.prevtime|date="Y-m-d H:i:s",###}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="list-group">
+                <!-- <div class="list-group-item"> <a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i> {:__('User center')}</a> </li> -->
+                <a class="list-group-item" href="{:url('user/profile')}"><i class="fa fa-user-circle fa-fw"></i> {:__('Profile')} <i class="fa fa-angle-right"></i></a>
+                <a class="list-group-item" href="{:url('user/order')}"><i class="fa fa-cubes fa-fw"></i> {:__('Order center')} <i class="fa fa-angle-right"></i></a>
+                <a class="list-group-item" href="{:url('user/member')}"><i class="fa fa-user-o fa-fw"></i> {:__('Member center')}<i class="fa fa-angle-right"></i></a>
+                <a class="list-group-item" href="{:url('user/cash')}"><i class="fa fa-usd"></i> {:__('Cash center')}<i class="fa fa-angle-right"></i></a>
+                {if($user['agent'])}
+                    <a class="list-group-item" href="{:url('user/agent')}"><i class="fa fa-user-secret"></i> {:__('Agent center')}<i class="fa fa-angle-right"></i></a>
+                {/if}
+                <a class="list-group-item" href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i> {:__('Change password')}<i class="fa fa-angle-right"></i></a>
+                <a class="list-group-item" href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i> {:__('Sign out')}</a>
+            </div>
+        </div>
+    </div>
+</div>

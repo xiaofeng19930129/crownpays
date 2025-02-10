@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {include file="common/meta" /}
+    </head>
+
+    <style>
+        .navbar-header{
+            display: flex;
+        }
+    
+
+        .navbar-header-center{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+        }
+        .center-logo{
+            padding: 10px 0;
+        }
+        .navbar-header-right{
+            width: 10%;
+            float: right;
+        }
+        .dropdown-menu{
+            left: auto;
+            right: 0;
+            min-width: 86px;
+        }
+    </style>
+
+    <body>
+
+        <nav class="navbar navbar-white navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="navbar-header-center">
+                        <a class="navbar-brand center-logo" href="{:url('/mobile')}"><img src="/assets/img/logo.png" alt="" style="width: 30px;height: 30px;"></a>
+                        <a class="navbar-brand" href="{:url('/mobile')}">{$site.name|htmlentities}</a>
+                    </div>
+                    <a href="javascript:;" class="dropdown-toggle navbar-brand navbar-header-right" data-toggle="dropdown" style="float: right;"><i class="fa fa-language"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="{$config['language']=='zh-cn'?'active':''}">
+                            <a href="?ref=addtabs&lang=zh-cn">简体中文</a>
+                        </li>
+                        <li class="{$config['language']=='en'?'active':''}">
+                            <a href="?ref=addtabs&lang=en">English</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            {__CONTENT__}
+        </main>
+        <style>
+            .tabbar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                border-top: 1px solid #ddd;
+                display: flex;
+                justify-content: space-around;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .tabbar-item {
+                flex: 1;
+                text-align: center;
+                padding: 10px 0;
+                text-decoration: none;
+                color: #333;
+                font-size: 16px;
+            }
+            
+            .tabbar-item.active {
+                color: #1ECFBB; /* 激活状态下的颜色 */
+                /* border-top: 1px solid #1ECFBB; */
+            }
+
+        </style>
+
+<div style="display: none;">
+    <img class="serviceQrcde" src="{$config.site.service_qrcde}" data-tips-image data-width="200px">
+</div>
+
+        <footer class="footer">
+            <div class="tabbar">
+                <a href="/mobile" class="tabbar-item {:check_tabbar_active($config.controllername,'index')}">{:__('Home')}</a>
+                <!-- <a href="#" class="tabbar-item {:check_tabbar_active($config.controllername,'index')}">分类</a>
+                <a href="#" class="tabbar-item {:check_tabbar_active($config.controllername,'index')}">购物车</a> -->
+                <a href="/mobile/user" class="tabbar-item {:check_tabbar_active($config.controllername,'user')}">{:__('User')}</a>
+            </div>
+        
+        </footer>
+        {include file="common/script" /}
+
+    </body>
+
+</html>

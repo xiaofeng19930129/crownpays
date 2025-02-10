@@ -1,0 +1,141 @@
+<style>
+    .basicinfo {
+        margin: 15px 0;
+    }
+
+    .basicinfo .row > .col-xs-4 {
+        padding-right: 0;
+    }
+
+    .basicinfo .row > div {
+        margin: 5px 0;
+    }
+    .savingsBtn{
+        margin-left: 10px;
+    }
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('Member center')}
+                        <a href="javascript:;" class="btn btn-primary pull-right savingsBtn" style="margin-left: 10px;"><i class="fa fa-money"></i> {:__('Savings Treasure')}</a>
+
+                        <a href="/" target="_blank" class="btn btn-primary pull-right placeOrder"><i class="fa fa-cubes fa-fw"></i> {:__('Placing an Order')}</a>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        <div class="col-md-3 col-sm-3 col-xs-3 text-center user-center">
+                            <a href="{:url('user/profile')}" title="{:__('Click to edit')}">
+                                <span class="avatar-img"><img src="{$user.avatar|htmlentities|cdnurl}" alt=""></span>
+                            </a>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                            <div class="ui-content">
+                                <h4><a href="{:url('user/profile')}">{$user.username|htmlentities}</a></h4>
+                                <p class="text-muted">
+                                    {$user.bio|default=__("This guy hasn't written anything yet")|htmlentities}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="ui-content">
+                                <div class="basicinfo">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Money')}(USDT)</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewmoney">{$user.usdt}</a>
+                                        </div>
+                                        <div class="col-xs-4 col-md-2">
+                                            {:__('Savings Treasure')}
+                                            <i class="fa fa-question-circle-o" title="{:__('The balance in the savings account can be withdrawn and used at any time')}"></i> 
+                                        </div>
+                                        <div class="col-xs-8 col-md-4">
+                                            <a href="javascript:;" class="viewscore">{$user.deposit}</a>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Current membership level')}</div>
+                                        <div class="col-xs-8 col-md-4">{:__('Level %s Member',[$user.member.level])}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Current level exchange rate')}</div>
+                                        <div class="col-xs-8 col-md-4">{$user.member.NGNUSD}/USDT</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">
+                                            {:__('Current flow')}
+                                            <i class="fa fa-question-circle-o" title="{:__('The cumulative flow of Nara quantity for each order, from January 1, April 1, July 1, and October 1 each year, with data reset and cumulative reset recalculated (retaining 10% of the flow record)')}"></i> 
+                                        </div>
+                                        <div class="col-xs-8 col-md-4">{$user.current_naira}</div>
+                                        <div class="col-xs-4 col-md-2">{:__('Current savings balance')}</div>
+                                        <div class="col-xs-8 col-md-4">
+                                            {$user.deposit}
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Upgrade conditions')}</div>
+                                        <div class="col-xs-8 col-md-10">
+                                            {if($nextLevel)}
+                                            {:__('Account balance reaches %s or savings balance reaches %s',[$nextLevel['naira_stream'],$nextLevel['usdt_balance']])}
+                                            {else/}
+                                            {:__('Reached the highest level')}
+                                            {/if}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-2">{:__('Upgrade rewards')}</div>
+                                        <div class="col-xs-8 col-md-10">
+                                            {if($nextLevel)}
+                                            {:__('Upgrade to level %s member and enjoy an exchange rate of %s today',[$nextLevel['level'],$nextLevel['NGNUSD']])}
+                                            {else/}
+                                            {:__('Reached the highest level')}
+                                            {/if}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="deposittpl">
+    <form id="deposit-form" class="form-horizontal form-layer" method="POST" action="{:url('index/ajax/deposit')}">
+        <div class="form-body">
+            
+            <div class="form-group">
+                <label for="amount" class="control-label col-xs-12 col-sm-3">{:__('Operation amount')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" class="form-control" id="amount" name="amount" value="" data-rule="required;range(1~)" placeholder="">
+                    <span class="msg-box"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-12 col-sm-3">{:__('Operation type')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <div class="radio">
+                        <label for="type-1"><input id="type-1" name="type" checked="checked" type="radio" value="1"> {:__('Transfer balance')}</label>
+                        <label for="type-2"><input id="type-2" name="type" type="radio" value="2"> {:__('Transfer out balance')}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-footer">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-3">
+                <button type="submit" class="btn btn-md btn-primary">{:__('Ok')}</button>
+                <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</script>

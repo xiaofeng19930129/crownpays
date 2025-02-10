@@ -1,0 +1,81 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" min="0" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Parent_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-parent_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[parent_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Order_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-order_id" data-rule="required" data-source="order/index" class="form-control selectpage" name="row[order_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_member_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_member_id" data-rule="required" data-source="user/member/index" class="form-control selectpage" name="row[user_member_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_member_exchange')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_member_exchange" data-rule="required" class="form-control" name="row[user_member_exchange]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('User_member_usdt')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_member_usdt" data-rule="required" class="form-control" step="0.001" name="row[user_member_usdt]" type="number" value="0.000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Parent_member_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-parent_member_id" data-rule="required" data-source="parent/member/index" class="form-control selectpage" name="row[parent_member_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Parent_member_exchange')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-parent_member_exchange" data-rule="required" class="form-control" name="row[parent_member_exchange]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Parent_member_usdt')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-parent_member_usdt" data-rule="required" class="form-control" step="0.001" name="row[parent_member_usdt]" type="number" value="0.000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Order_naira')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-order_naira" data-rule="required" class="form-control" step="0.001" name="row[order_naira]" type="number" value="0.000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Rake_usdt')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-rake_usdt" data-rule="required" class="form-control" step="0.001" name="row[rake_usdt]" type="number" value="0.000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Dates')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dates" class="form-control" name="row[dates]" type="text">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

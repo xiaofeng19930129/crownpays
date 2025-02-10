@@ -1,0 +1,454 @@
+<div class="panel panel-default panel-intro">
+    <style type="text/css" media="all">
+        body {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.box {
+	overflow-y: auto;
+	background: #FFFFFF;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	padding: 20px;
+}
+
+.cur-state {
+	font-size: 16px;
+	font-weight: bold;
+	color: #00CE9B;
+	padding: 20px 0 0 24px;
+}
+
+.state-box {
+	display: flex;
+	justify-content: space-around;
+	width: 588px;
+	margin: auto;
+	margin-top: 16px;
+	padding: 0 24px;
+}
+
+.state-time-box {
+	display: flex;
+	justify-content: space-around;
+	width: 683px;
+             /* width:588px; */
+	margin: auto;
+	margin-top: 3px;
+	padding: 0 24px;
+	text-align: center;
+}
+
+.state-time {
+	font-size: 12px;
+	font-weight: 400;
+	color: #999999;
+	width: 133px;
+}
+
+.each-state {
+	width: 60px;
+}
+
+.state-img {
+	width: 16px;
+	height: 16px;
+ /* background: #00CE9B; */
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	display: block;
+	margin: auto;
+}
+
+.state-text {
+	font-size: 12px;
+	margin-top: 8px;
+	font-weight: 400;
+	text-align: center;
+	color: #999999;
+}
+
+.cur-text {
+	color: #00CE9B;
+    width: 60px;
+}
+
+.wire {
+	width: 70px;
+	height: 0px;
+	opacity: 1;
+	border: 1px solid #DCDEE5;
+	margin-top: 6px;
+}
+
+.gap1 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-top: 28px;
+}
+         /* 订单信息 */.order-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.order-info-head-text-4 {
+	flex: 4;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.order-info-head-text-2 {
+	flex: 1;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.order-info-matter {
+	display: flex;
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+}
+
+.gap2 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+ /*
+        margin-top: 28px; */;
+} /* 项目信息 */.item-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.item-info-head {
+	display: flex;
+	border-top: 1px solid #EEEEEE;
+	border-left: 1px solid
+        #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+	margin-top: 16px;
+}
+
+.item-info-head-text-5 {
+	flex: 5;
+	text-align: center;
+	border-right: 1px solid #EEEEEE;
+}
+
+.item-info-head-text-2 {
+	flex: 2;
+	text-align: center;
+}
+
+.item-info-head-text-1 {
+	flex: 2;
+	text-align: center;
+}
+
+.serve-list {
+	display: flex;
+	height: 58px;
+	align-items: center;
+}
+
+.item-info-matter-text-5 {
+	flex: 5;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	border-right: 1px solid #EEEEEE;
+	display: flex;
+	justify-content: center;
+}
+
+.item-info-matter-text-2 {
+	flex: 2;
+	text-align: center;
+	line-height: 58px;
+}
+
+.border-lr {
+	border-left: 1px
+        solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+} /* .item-info-matter-text-1
+        { flex: 2; text-align: center; } */.item-info-matter {
+	display: flex;
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+}
+
+.item-info-matter-img {
+	width: 38px;
+	height: 38px;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-right: 12px;
+}
+
+.increase {
+	width: 32px;
+	height: 18px;
+	background: #EDEEF1;
+	border-radius: 3px 3px
+        3px 3px;
+	opacity: 1;
+	text-align: center;
+	line-height: 18px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #A4A9B7;
+	margin-left: 8px;
+}  /* 佣金 */
+.item-info-yj-text-1 {
+	flex: 1;
+	text-align: center;
+}
+
+.border-l {
+	border-left: 1px solid #EEEEEE;
+}
+
+.text-red {
+	color: #FF1F2B;
+}
+
+div::-webkit-scrollbar {
+	width: 4px;
+} /* // 滚动条轨道 */div::-webkit-scrollbar-track {
+	background: #FFF;
+	border-radius: 2px;
+} /* // 小滑块 */div::-webkit-scrollbar-thumb {
+	background: #D9D9D9;
+	border-radius: 10px;
+}
+
+.titles {
+	font-size: 14px;
+}
+
+.img-box {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.photo {
+	width: 100px;
+	height: 100px;
+	margin: 0 8px 8px 0;
+}
+    </style>
+    <div class="box">
+        <div class="state-box">
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status >= 1)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    待接单
+                </div>
+            </div>
+            <div class="wire">
+            </div>
+            {if($row.status == 2)}
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status == 2)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    已撤回
+                </div>
+            </div>
+            <div class="wire">
+            </div>
+            {/if}
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status >= 3)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    支付中
+                </div>
+            </div>
+            <div class="wire">
+            </div>
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status >= 4)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    已完成
+                </div>
+            </div>
+            {if($row.status > 4)}
+            <div class="wire">
+            </div>
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status >= 5)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    申诉中
+                </div>
+            </div>
+            <div class="wire">
+            </div>
+            <div class="each-state">
+                <img class="state-img" src="/assets/img/{if($row.status == 6)}Vector1.png{else/}Vector2.png{/if}" alt="">
+                <div class="state-text cur-text">
+                    申诉完成
+                </div>
+            </div>
+            {/if}
+        </div>
+        <div class="gap1">
+        </div>
+        <!-- 订单信息 -->
+        <div class="order-info-box">
+            <div class="title">
+                订单信息
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Sn')}：{$row.sn}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Order amount(Naria)')}：{$row.naira}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Order amount(USDT)')}：{$row.usdt}
+                </div>
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Bankname')}：{$row.bankname}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Cardnumber')}：{$row.cardnumber}
+                </div>
+                <div class="order-info-head-text-4">
+                </div>
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Expense')}：{$row.total_expense}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Expense Type')}：{:__("Expense Type ".$row.expense_type)}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Expense detail')}
+                    {$row.expense_fixed}
+                    {if($row.expense_type == 1)}
+                        + {$row.expense_ratio}
+                    {/if}
+                </div>
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Users')}：{$row.user.username}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Createtime')}：{:date('Y-m-d h:i',$row['createtime'])}
+                </div>
+                <div class="order-info-head-text-4">
+                    
+                </div>
+            </div>
+            <div class="order-info-matter">
+                <div class="order-info-head-text-4">
+                    {:__('Admins')}：
+
+                    {if($row.admin_id)}
+                        {$row.admin.username}
+                    {/if}
+                </div>
+                <div class="order-info-head-text-4">
+                    {:__('Accepttime')}：
+                        {if($row.status >= 3)}
+                            {:date('Y-m-d h:i',$row['accepttime'])}
+                        {/if}
+                </div>
+                <div class="order-info-head-text-4">
+                    {if($row.status == 3)}
+                        {:__('Revoketime')}：{:date('Y-m-d h:i',$row['revoketime'])}
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <div class="gap2">
+        </div>
+        <div class="item-info-box">
+            <div class="title">{:__('Transfer voucher')}</div>
+            <div class="item-info-head">
+              <div class="item-info-head-text-5">{:__('Voucher image')}</div>
+              <div class="item-info-head-text-2">{:__('Transfer time')}</div>
+            </div>
+      
+            <div class="item-info-matter">
+              <div class="item-info-matter-text-5 serve-list">
+                {if($row.status >= 4)}
+                    <img class="item-info-matter-img" data-tips-image src="{$row.voucher}" alt="">
+                {/if}
+              </div>
+              <div class="item-info-matter-text-2">
+                {if($row.status >= 4 )}
+                    {:date('Y-m-d h:i',$row['finishtime'])}
+                {/if}
+              </div>
+            </div>
+                </div>
+        {if($row.status >= 5)}
+        <div class="item-info-box">
+            <div class="title">
+                {:__('Appeal record')}
+            </div>
+            <div class="item-info-head">
+                <div class="item-info-yj-text-1">
+                    {:__('Appeal content')}
+                </div>
+                <div class="item-info-yj-text-1">
+                    {:__('Reply content')}
+                </div>
+                <div class="item-info-yj-text-1">
+                    {:__('Reply time')}
+                </div>
+                <div class="item-info-yj-text-1">
+                    {:__('Appeal time')}
+                </div>
+            </div>
+            {volist name="appealList" id="item"}
+            <div class="item-info-matter">
+                <div class="item-info-yj-text-1">
+                    {$item.content}
+                </div>
+                <div class="item-info-yj-text-1 border-l">
+                    {$item.reply_content}
+                </div>
+                <div class="item-info-yj-text-1 border-l">
+                    {:date('Y-m-d h:i',$row['replytime'])}
+                </div>
+                <div class="item-info-yj-text-1 border-l">
+                    {:date('Y-m-d h:i',$row['createtime'])}
+                </div>
+            </div>
+            {/volist}
+        </div>
+        {/if}
+    </div>
+</div>

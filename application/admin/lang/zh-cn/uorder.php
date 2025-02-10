@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'Id'                     => 'ID',
+    'User_id'                => '下单用户',
+    'Serial'                 => '当天第多少单子',
+    'Sn'                     => '订单编号',
+    'To_address'             => '转出方的钱包地址',
+    'From_address'           => ',接收方的钱包址',
+    'Type'                   => '类型',
+    'Type 1'                 => '转入',
+    'Type 2'                 => '转出',
+    'Amount'                 => '订单金额USDT',
+    'Token_name'             => '代币名称',
+    'Token_type'             => '公链类型',
+    'Final_result'           => '转账状态',
+    'Final_result SUCCESS'   => '成功',
+    'Final_result ERROR'     => '失败',
+    'Final_result OPERATION' => '转账中',
+    'Resulttime'             => '回调时间',
+    'Overtime'               => '过期时间',
+    'Status'                 => '状态',
+    'Status 1'               => '转账中',
+    'Set status to 1'        => '设为转账中',
+    'Status 2'               => '已失效',
+    'Set status to 2'        => '设为已失效',
+    'Status 3'               => '完成',
+    'Set status to 3'        => '设为完成',
+    'Createtime'             => '创建时间',
+    'Updatetime'             => '更新时间',
+    'Deletetime'             => '删除时间',
+    'User.username'          => '用户名'
+];

@@ -1,0 +1,175 @@
+<style>
+    .orderlist{
+    width: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #EEEEEE;
+    border-top: 1px solid #EEEEEE;
+    
+}
+
+.order-head{
+    display: flex;
+}
+.item-head{
+    flex: 1;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+.order-line{
+    display: flex;    
+}
+
+.flex-1{
+    flex: 1;
+}
+.flex-2{
+    flex: 2;
+}
+.item-text{
+    text-align: center;
+    height: 90px;
+    line-height: 1.5em;
+    /* width: 210px; */
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voucher{
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+.orderAppeal,.orderRevoke{
+    cursor:pointer;
+}
+.order-footer{
+    display: flex;
+    justify-content: right
+}
+.census{
+    font-size:13px;
+}
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            {include file="common/sidenav" /}
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('Agent rebate orders')}
+                        <span class="census">{:__('Number of Invitations')}：{$agentCensus.userCount}</span>
+                        <span class="census">{:__('Order quantitys')}：{$agentCensus.orderCount}</span>
+                        <span class="census">{:__('Rebate amount')}：{$agentCensus.orderShareMoney}</span>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        
+                        <div class="orderlist">
+                            <div class="order-head">
+                                <div class="item-head flex-2">
+                                    {:__('Ordering user')}
+                                </div>
+                                <div class="item-head flex-2">
+                                    {:__('Order amount')}{:__('Naira')}
+                                </div>
+                                <div class="item-head flex-1">
+                                    {:__('Rebate amount')}USDT
+                                </div>
+                                <div class="item-head flex-2">
+                                    {:__('Order time')}
+                                </div>
+                            </div>
+                            {volist name="shareOrderList" id="item"}
+                            <div class="order-line">
+                                <div class="item-text flex-2">
+                                    {$item.user_name}
+                                </div>
+                                <div class="item-text flex-2">
+                                    {$item.order_naira}
+                                </div>
+                                <div class="item-text flex-1">
+                                    {$item.rake_usdt}
+                                </div>
+                                <div class="item-text flex-2">
+                                    {$item.dates}
+                                </div>
+                            </div>
+                            {/volist}
+                            <div class="order-footer">{$shareOrderList->render()}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .order-title{
+    border-bottom: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+</style>
+<script type="text/html" id="appealtpl">
+    <form id="appeal-form" class="form-horizontal nice-validator n-default n-bootstrap" role="form" method="post" action="/index/ajax/appeal" data-toggle="validator" novalidate="novalidate">
+        <div class="form-body">
+            {:token()}
+            <input type="hidden" name="order_id" class="appealOrderId" value="">
+            <div class="form-group">
+                <label for="content" class="control-label col-xs-12 col-sm-3">{:__('Appeal content')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <textarea name="content" id="c-content" class="form-control" data-rule="required;" cols="30" rows="10" placeholder="" style="width:80%;"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-footer">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-embossed">{:__('Submit')}</button>
+                <button type="reset" class="btn btn-default btn-embossed btnReset">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="home_three" style="width: 80%;margin: 0 auto;">
+        <div class="orderlist">
+            <div class="order-title">
+                {:__('Appeal record')}
+            </div>
+            <div class="order-head">
+                <div class="item-head flex-1">
+                    {:__('Appeal content')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Reply content')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Recovery time')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Status')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Appeal time')}
+                </div>
+            </div>
+            <!-- <div class="order-line">
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+            </div> -->
+        </div>
+    </div>
+</script>

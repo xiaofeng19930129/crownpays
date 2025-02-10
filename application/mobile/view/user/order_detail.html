@@ -1,0 +1,361 @@
+<div class="panel panel-default panel-intro">
+    <style type="text/css" media="all">
+        body {
+
+        }
+
+.box {
+	overflow-y: auto;
+	background: #FFFFFF;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	padding: 20px;
+}
+
+.cur-state {
+	font-size: 16px;
+	font-weight: bold;
+	color: #00CE9B;
+	padding: 20px 0 0 24px;
+}
+
+.state-box {
+	display: flex;
+	justify-content: space-around;
+	width: 588px;
+	margin: auto;
+	margin-top: 16px;
+	padding: 0 24px;
+}
+
+.state-time-box {
+	display: flex;
+	justify-content: space-around;
+	width: 683px;
+             /* width:588px; */
+	margin: auto;
+	margin-top: 3px;
+	padding: 0 24px;
+	text-align: center;
+}
+
+.state-time {
+	font-size: 12px;
+	font-weight: 400;
+	color: #999999;
+	width: 133px;
+}
+
+.each-state {
+	width: 60px;
+}
+
+.state-img {
+	width: 16px;
+	height: 16px;
+ /* background: #00CE9B; */
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	display: block;
+	margin: auto;
+}
+
+.state-text {
+	font-size: 12px;
+	margin-top: 8px;
+	font-weight: 400;
+	text-align: center;
+	color: #999999;
+}
+
+.cur-text {
+	color: #00CE9B;
+    width: 60px;
+}
+
+.wire {
+	width: 70px;
+	height: 0px;
+	opacity: 1;
+	border: 1px solid #DCDEE5;
+	margin-top: 6px;
+}
+
+.gap1 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-top: 28px;
+}
+         /* 订单信息 */.order-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.order-info-head-text {
+	text-align: left;
+	padding-left: 10px;
+	line-height: 24px;
+    border-bottom: 1px solid #EEE;
+}
+
+
+.order-info-matter {
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 20px;
+}
+
+.gap2 {
+	width: 100%;
+	height: 8px;
+	background: #F1F4F6;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+} /* 项目信息 */.item-info-box {
+	padding: 20px 24px;
+}
+
+.title {
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+    margin-bottom: 10px;
+}
+
+.item-info-head {
+	display: flex;
+	border-top: 1px solid #EEEEEE;
+	border-left: 1px solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	line-height: 40px;
+	margin-top: 16px;
+}
+.item-info-head-text {
+	text-align: center;
+	border-bottom: 1px solid #EEEEEE;
+	
+}
+.item-info-head-text-5 {
+	flex: 5;
+	text-align: center;
+	border-right: 1px solid #EEEEEE;
+}
+
+.item-info-head-text-2 {
+	flex: 2;
+	text-align: center;
+}
+
+.item-info-head-text-1 {
+	flex: 2;
+	text-align: center;
+}
+
+.serve-list {
+	display: flex;
+	height: 58px;
+	align-items: center;
+}
+
+.item-info-matter-text-5 {
+	flex: 5;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	border-right: 1px solid #EEEEEE;
+	display: flex;
+	justify-content: center;
+}
+
+.item-info-matter-text-2 {
+	flex: 2;
+	text-align: center;
+	line-height: 58px;
+}
+
+.border-lr {
+	border-left: 1px
+        solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+} /* .item-info-matter-text-1
+        { flex: 2; text-align: center; } */.item-info-matter {
+	display: flex;
+	border: 1px solid #EEE;
+	font-size: 12px;
+	font-weight: 400;
+	color: #666666;
+	/* line-height: 40px; */
+}
+
+.item-info-matter-img {
+	width: 38px;
+	height: 38px;
+	border-radius: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-right: 12px;
+}
+
+.increase {
+	width: 32px;
+	height: 18px;
+	background: #EDEEF1;
+	border-radius: 3px 3px
+        3px 3px;
+	opacity: 1;
+	text-align: center;
+	line-height: 18px;
+	font-size: 12px;
+	font-weight: 400;
+	color: #A4A9B7;
+	margin-left: 8px;
+}  /* 佣金 */
+.item-info-yj-text-1 {
+	flex: 1;
+	text-align: center;
+}
+
+.border-l {
+	border-left: 1px solid #EEEEEE;
+}
+
+.text-red {
+	color: #FF1F2B;
+}
+
+div::-webkit-scrollbar {
+	width: 4px;
+} /* // 滚动条轨道 */div::-webkit-scrollbar-track {
+	background: #FFF;
+	border-radius: 2px;
+} /* // 小滑块 */div::-webkit-scrollbar-thumb {
+	background: #D9D9D9;
+	border-radius: 10px;
+}
+
+
+.img-box {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.photo {
+	width: 100px;
+	height: 100px;
+	margin: 0 8px 8px 0;
+}
+    </style>
+    <div class="order-info-box">
+        <div class="title">
+            {:__('Order detail')}：
+            <span>
+                {if($order.status == 1)}
+                    {:__('Pending orders')}
+                {elseif($order.status ==2)}
+                    {:__('Withdrawn')}
+                {elseif($order.status ==3)}
+                    {:__('Payment in progress')}
+                {elseif($order.status ==4)}
+                    {:__('Finish')}
+                {elseif($order.status ==5)}
+                    {:__('Appeal in progress')}
+                {else/}
+                {:__('Appeal completed')}
+                {/if}
+            </span>
+        </div>
+        <div class="order-info-matter">
+            <div class="order-info-head-text">
+                {:__('Order sn')}：{$order.sn}
+            </div>
+            <div class="order-info-head-text">
+                {:__('Total amount')}/{:__('Naira')}：{$order.total_naira}
+            </div>
+            <div class="order-info-head-text">
+                {:__('Order amount')}/USDT：{$order.usdt}
+            </div>
+			<div class="order-info-head-text">
+                {:__('Order amount')}/{:__('Naira')}：{$order.naira}
+
+            </div>
+            <div class="order-info-head-text">
+                {:__('Expense')}：{$order.total_expense}
+
+            </div>
+            <div class="order-info-head-text">
+                {:__('Expense Type')}：{:__("Expense Type ".$order.expense_type)}
+                
+            </div>
+			<div class="order-info-head-text">
+                {:__('Expense detail')}
+                {$order.expense_fixed}
+                {if($order.expense_type == 1)}
+                    + {$order.expense_ratio}
+                {/if}
+            </div>
+            <div class="order-info-head-text">
+                {:__('Order time')}：{:date('Y-m-d h:i',$order['createtime'])}
+                
+            </div>
+            <div class="order-info-head-text">
+                {if($order.status > 3)}
+                {:__('Finish time')}：{:date('Y-m-d h:i',$order['finishtime'])}
+                {/if}
+            </div>
+			<div class="order-info-head-text">
+                <div style="width: 60px;display: inline-block;">{:__('Ordering Information')}：</div>
+                <div style="display: inline-block;line-height:1.5em">{:nl2br($order.content)}</div>
+            </div>
+			<div class="order-info-head-text">
+                <div style="width: 60px;display: inline-block;">{:__('Transfer screenshot')}：</div>
+                <div style="display: inline-block;">{if($order.voucher)}
+					<img src="{$order.voucher}" id="voucher" data-tips-image data-width="200px" style="height: 40px; width: 40px;cursor:pointer;">
+					{/if}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="window-img" style="display: none"></div>
+
+<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="/assets/libs/fastadmin-layer/dist/layer.js?v=1736088890"></script>
+<!-- <script src="/assets/js/mobile.js"></script> -->
+<!-- <script src="__CDN__/assets/js/require{$Think.config.app_debug?'':'.min'}.js" data-main="__CDN__/assets/js/require-mobile{$Think.config.app_debug?'':'.min'}.js?v={$site.version|htmlentities}"></script> -->
+ <script>
+    $("#voucher").click(function(){
+        var url = $(this).attr('src');
+        windowImg(url);
+    })
+    function windowImg(imgUrl) {
+	$('#window-img').empty();
+	var img = "<img class='window-img' src='" + imgUrl + "' width='200px' height='200px' />";
+	$('#window-img').append(img);
+	layer.open({
+		type: 1,
+		title: false,
+		//resize:false,
+		shadeClose: true, //点击遮罩关闭
+		content: $('#window-img'),
+		area: 'auto',
+		maxWidth: 600,
+		cancel: function() {
+			$('#window-img').css('display', 'none');
+		},
+		end: function() {
+			$('#window-img').css('display', 'none');
+		}
+	});
+}
+ </script>

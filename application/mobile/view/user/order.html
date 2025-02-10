@@ -1,0 +1,266 @@
+<style>
+    .orderlist{
+    width: 100%;
+    margin: 0 auto;
+    border-left: 1px solid #EEEEEE;
+    border-top: 1px solid #EEEEEE;
+    
+}
+
+.order-head{
+    display: flex;
+}
+.item-head{
+    flex: 1;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+.order-line{
+    display: flex;    
+}
+
+.flex-1{
+    flex: 1;
+}
+.flex-2{
+    flex: 2;
+}
+.item-text{
+    text-align: center;
+    height: 90px;
+    line-height: 1.5em;
+    /* width: 210px; */
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voucher{
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+.orderAppeal,.orderRevoke,.orderDetail{
+    cursor:pointer;
+}
+.order-footer{
+    display: flex;
+    justify-content: right
+}
+
+.form-group{
+    width: 320px;
+}
+
+.searchBtn{
+    margin-left: 10px;
+}
+
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('Order center')}
+                    </h2>
+                    <div class="row user-baseinfo">
+                        
+                        <div class="commonsearch-table ">
+                            <form class="form-horizontal" method="post" action="user/order">
+                                <fieldset>
+                                    <div class="row">
+                                        <!-- <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                            <label for="status" class="control-label col-xs-4">
+                                                状态
+                                            </label>
+                                            <div class="col-xs-8">
+                                                <input type="hidden" class="form-control operate" name="status-operate"
+                                                data-name="status" value="=" readonly="">
+                                                <select class="form-control" name="status">
+                                                    <option value="">
+                                                        选择
+                                                    </option>
+                                                    <option value="1">待接单</option>
+                                                    <option value="2">订单撤回</option>
+                                                    <option value="3">正在支付</option>
+                                                    <option value="4">已完成</option>
+                                                    <option value="5">申诉中</option>
+                                                    <option value="6">申诉完成</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-3">
+                                            <label for="createtime" class="control-label col-xs-4" style="line-height:30px;">
+                                                {:__('Order time')}
+                                            </label>
+                                            <div class="col-xs-8" style="display: flex;">
+                                                <input type="text" class="form-control datetimerange" name="time"
+                                                value="{$time}" placeholder="{:__('Order time')}" id="time" data-index="20" autocomplete="off" style="width: 166px;">
+                                                <button type="button" class="btn btn-success searchBtn">
+                                                    提交
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="orderlist">
+
+                            <style>
+                                .order-item{
+                                    width:100%;
+                                    /* height: 300px; */
+                                    /* border: 1px solid red; */
+                                    background: #f4f6f8;
+                                    border-radius: 10px;
+                                    margin-bottom: 10px;
+                                }
+                                .item-heads{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 10px 10px 0 10px;
+                                }
+                                .item-body{
+                                    display: flex;
+                                    /* justify-content: space-between; */
+                                    padding: 0 10px 10px 10px;
+                                    /* width: 70%; */
+                                }
+                                .item-content{
+                                    width: 70%;
+                                }
+                                .item-opeate{
+                                    width: 30%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-end;
+                                }
+                                .item-opeate div{
+                                    width: 100px;
+                                    border: 1px solid #aaa;
+                                    border-radius:16px;
+                                    margin-top:5px;
+                                    text-align:center;
+                                }
+                            </style>
+                            {volist name="orderList" id="item"}
+                            <div class="order-item">
+                                <div class="item-heads">
+                                    <div class="head-left">
+                                        {:__('Order sn')}：{$item.sn}
+                                    </div>
+                                    <div class="head-right">
+                                        {if($item.status == 1)}
+                                        {:__('Pending orders')}
+                                        {elseif($item.status ==2)}
+                                            {:__('Withdrawn')}
+                                        {elseif($item.status ==3)}
+                                            {:__('Payment in progress')}
+                                        {elseif($item.status ==4)}
+                                            {:__('Finish')}
+                                        {elseif($item.status ==5)}
+                                            {:__('Appeal in progress')}
+                                        {else/}
+                                        {:__('Appeal completed')}
+                                        {/if}
+                                    </div>
+                                </div>
+                                <div class="item-body">
+                                    <div class="item-content">
+                                        <div>{:__('Exchange rate')}：{$item.exchange}</div>
+                                        <div>{:__('Charge for trouble')}({:__('Naira')})：{$item.total_expense}</div>
+                                        <div>{:__('Total amount')}({:__('Naira')})：{$item.total_naira}</div>
+                                        <div>{:__('Total amount')}(USDT)：{$item.usdt}</div>
+                                        <div>{:__('Order time')}：{:date("Y-m-d H:i:s",$item.createtime)}</div>
+                                    </div>
+                                    <div class="item-opeate" data-id="{$item.id}">
+                                        {if($item.status == 1)}
+                                        <div class="orderRevoke">{:__('Cancel order')}</div>
+                                        {/if}
+                                        {if($item.status == 4 || $item.status == 6)}
+                                        <div class="orderAppeal">{:__('Order appeal')}</div>
+                                        {/if}
+                                        <div class="orderDetail">{:__('Order detail')}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/volist}
+                            <div class="order-footer">{$orderList->render()}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .order-title{
+    border-bottom: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+</style>
+<script type="text/html" id="appealtpl">
+    <form id="appeal-form" class="form-horizontal nice-validator n-default n-bootstrap" role="form" method="post" action="/index/ajax/appeal" data-toggle="validator" novalidate="novalidate">
+        <div class="form-body">
+            {:token()}
+            <input type="hidden" name="order_id" class="appealOrderId" value="">
+            <div class="form-group">
+                <label for="content" class="control-label col-xs-12 col-sm-3">{:__('Appeal content')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <textarea name="content" id="c-content" class="form-control" data-rule="required;" cols="30" rows="10" placeholder="" style="width:80%;"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-footer">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-embossed">{:__('Submit')}</button>
+                <button type="reset" class="btn btn-default btn-embossed btnReset">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="home_three" style="width: 80%;margin: 0 auto;">
+        <div class="orderlist">
+            <div class="order-title">
+                {:__('Appeal record')}
+            </div>
+            <div class="order-head">
+                <div class="item-head flex-1">
+                    {:__('Appeal content')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Reply content')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Recovery time')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Status')}
+                </div>
+                <div class="item-head flex-1">
+                    {:__('Appeal time')}
+                </div>
+            </div>
+            <!-- <div class="order-line">
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+                <div class="item-text flex-1"></div>
+            </div> -->
+        </div>
+    </div>
+</script>

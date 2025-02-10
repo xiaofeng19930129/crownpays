@@ -1,0 +1,202 @@
+<style>
+    .orderlist{
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.order-head{
+    display: flex;
+}
+.item-head{
+    flex: 1;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+.order-line{
+    display: flex;    
+}
+
+.flex-1{
+    flex: 1;
+}
+.flex-2{
+    flex: 2;
+}
+.flex-3{
+    flex: 3;
+}
+.flex-4{
+    flex: 4;
+}
+.item-text{
+    /* text-align: center;
+    height: 90px;
+    line-height: 1.5em;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.voucher{
+    width: 40px;
+    height: 40px;
+    cursor:pointer;
+}
+.orderAppeal,.orderRevoke{
+    cursor:pointer;
+}
+.order-footer{
+    display: flex;
+    justify-content: right
+}
+.census{
+    font-size:13px;
+}
+</style>
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="page-header">
+                        {:__('Cash Center')}
+                        <a href="javascript:;" class="btn btn-primary pull-right withdrawal"><i class="fa fa-usd"></i> {:__('Withdrawal')}</a>
+                    </h2>
+                    <div class="row user-baseinfo">
+                        
+                        <div class="orderlist">
+
+                            <style>
+                                .order-item{
+                                    width:100%;
+                                    background: #f4f6f8;
+                                    border-radius: 10px;
+                                    padding-bottom: 10px;
+                                }
+                                .item-heads{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 10px 10px 0 10px;
+                                }
+                                .item-body{
+                                    display: flex;
+                                    padding: 0 10px 10px 10px;
+                                }
+                                .item-content{
+                                    
+                                }
+                                .content-line{
+                                    width: 100%;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    padding: 0 10px;
+                                }
+                                .item-opeate{
+                                    width: 30%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-end;
+                                }
+                                .item-opeate div{
+                                    width: 100px;
+                                    border: 1px solid #aaa;
+                                    border-radius:16px;
+                                    margin-top:5px;
+                                    text-align:center;
+                                }
+                            </style>
+                            {volist name="cashList" id="item"}
+                            <div class="order-item">
+                                <div class="item-heads">
+                                    <div class="head-left">
+                                        {:__('Withdrawal quantity')}USDT：{$item.usdt}
+                                    </div>
+                                    <div class="head-right">
+                                        {if($item.audit == 1)}
+                                            {:__('Pending approval')}
+                                        {elseif($item.audit == 2)}
+                                            {:__('Not pass')}
+                                        {else/}
+                                            {:__('Has passed')}    
+                                        {/if}
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="content-line">
+                                        {:__('Wallet address')}：{:$item.wallet_address}
+                                    </div>
+
+                                    <div class="content-line">
+                                        {:__('Audit remarks')}：
+                                            {if($item.audit == 1)}
+                                            {:__('Pending approval')}
+                                            {else/}
+                                            {:$item.audit_remark}
+                                            {/if}
+                                    </div>
+                                    <div class="content-line">
+                                        {:__('Audit time')}：
+                                            {if($item.audit == 1)}
+                                            {:__('Pending approval')}
+                                            {else/}
+                                            {:date('Y-m-d H:i:s',$item.audit_time)}
+                                            {/if}
+                                    </div>
+
+                                    <div class="content-line">
+                                        {:__('Withdrawal time')}：{:date('Y-m-d H:i:s',$item.createtime)}
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            {/volist}
+                            <div class="order-footer">{$cashList->render()}</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="withdrawaltpl">
+    <form id="withdrawal-form" class="form-horizontal form-layer" method="POST" action="{:url('index/ajax/withdrawal')}">
+
+        <div class="form-body">
+            
+            <div class="form-group" style="width: 90%;">
+                <label for="amount" class="control-label col-xs-12 col-sm-3">{:__('Withdrawal quantity')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" class="form-control" id="amount" name="amount" value="" data-rule="required;range(1~)" placeholder="">
+                    <span class="msg-box"></span>
+                </div>
+            </div>
+            <div class="form-group" style="width: 90%;">
+                <label for="wallet_address" class="control-label col-xs-12 col-sm-3">{:__('Wallet address')}:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" class="form-control" id="wallet_address" name="wallet_address" value="" data-rule="required;" placeholder="">
+                    <span class="msg-box"></span>
+                </div>
+            </div>
+            <div class="form-group" style="width: 90%;">
+                <label class="control-label col-xs-12 col-sm-3">{:__('Withdrawal instructions')}:</label>
+                <div class="col-xs-12 col-sm-8" style="margin-bottom: 0;padding-top: 7px;">
+                    {:__('After the withdrawal review, the arrival time is: T+1')}
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-footer">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-3">
+                <button type="submit" class="btn btn-md btn-primary" style="float: right;margin: 10px 10px 10px 0;">{:__('Ok')}</button>
+                <button type="reset" class="btn btn-default btn-embossed" style="float: right;margin: 10px;">{:__('Reset')}</button>
+            </div>
+        </div>
+    </form>
+</script>

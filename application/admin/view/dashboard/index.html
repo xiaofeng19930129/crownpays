@@ -1,0 +1,483 @@
+<style type="text/css">
+    .sm-st{background:#fff;padding:20px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;margin-bottom:20px}
+    .sm-st-icon{width:60px;height:60px;display:inline-block;line-height:60px;text-align:center;font-size:30px;background:#eee;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;float:left;margin-right:10px;color:#fff}
+    .sm-st-info{padding-top:2px}
+    .sm-st-info span{display:block;font-size:24px;font-weight:600}
+    .orange{background:#fa8564 !important}
+    .tar{background:#45cf95 !important}
+    .sm-st .green{background:#86ba41 !important}
+    .pink{background:#AC75F0 !important}
+    .yellow-b{background:#fdd752 !important}
+    .stat-elem{background-color:#fff;padding:18px;border-radius:40px}
+    .stat-info{text-align:center;background-color:#fff;border-radius:5px;margin-top:-5px;padding:8px;-webkit-box-shadow:0 1px 0px rgba(0,0,0,0.05);box-shadow:0 1px 0px rgba(0,0,0,0.05);font-style:italic}
+    .stat-icon{text-align:center;margin-bottom:5px}
+    .st-red{background-color:#F05050}
+    .st-green{background-color:#27C24C}
+    .st-violet{background-color:#7266ba}
+    .st-blue{background-color:#23b7e5}
+    .stats .stat-icon{color:#28bb9c;display:inline-block;font-size:26px;text-align:center;vertical-align:middle;width:50px;float:left}
+    .stat{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block}
+    .stat .value{font-size:20px;line-height:24px;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+    .stat .name{overflow:hidden;text-overflow:ellipsis;margin:5px 0}
+    .stat.lg .value{font-size:26px;line-height:28px}
+    .stat-col{margin:0 0 10px 0}
+    .stat.lg .name{font-size:16px}
+    .stat-col .progress{height:2px}
+    .stat-col .progress-bar{line-height:2px;height:2px}
+    .item{padding:30px 0}
+    #statistics .panel{min-height:150px}
+    #statistics .panel h5{font-size:14px}
+    html{margin:0;padding:0}
+    body{margin:0;padding:0}
+    .box{display:flex}
+    .content{flex:1;background:#f7f7fa;}
+    .head{width:100%;height:80px;background:#ffffff;border-radius:0px 0px 0px 0px;opacity:1}
+    .floor1-box{display:flex;justify-content:space-between;flex-wrap:wrap}
+    .flex-1{flex:1;display:flex;justify-content:space-around}
+    .flex-2{flex:1;display:flex;justify-content:space-around}
+    .floor1-each{height:180px;flex:1;border-radius:10px 10px 10px 10px;opacity:1;margin:24px 12px 0 12px;padding:0 28px 0 32px;display:flex;justify-content:space-between;align-items:center}
+    .text-box-text{font-size:16px;font-weight:400;color:#FFF}
+    .floor1-each-img{font-size:14px;font-weight:400;margin-top:4px}
+    .floor1-each-img-r{width:16px;height:10px}
+    .change-img{width:78px;height:78px}
+    .floor1-each-img-r{width:78px;height:78px}
+    .floor1-each-image{
+        width: 60px;
+        height: 60px;
+    }
+    .each-1{background:#1962EC}
+    .each-2{background:#FC9131}
+    .each-3{background:#EB1918}
+    .each-4{background:#00CE9B}
+    .change{color:#FFF}
+    .up-icon{width:16px;height:9px}
+    .boxs{display:flex;flex-wrap:wrap}
+    .boxs-1{display:flex;justify-content:space-between;flex-wrap:wrap}
+    .boxs:after{flex:auto}
+    .each-box{display:flex;justify-content:space-between;flex-wrap:wrap}
+    .box-l{flex:1;display:flex;justify-content:space-around;flex-wrap:wrap}
+    .box-r{flex:1;display:flex;justify-content:space-around;flex-wrap:wrap}
+    .box-1{min-width:200px;height:385px;background:linear-gradient(180deg,#02DAA4 0%,#019D76 100%);border-radius:20px 20px 20px 20px;margin:24px 12px 0 12px;flex:7}
+    .back{width:90%;height:164px;background:#0F9B80;border-radius:20px 20px 20px 20px;margin:auto;margin-top:30px;display:flex;align-items:center;justify-content:space-between}
+    .back-sum{font-size:16px;font-weight:400;color:#ffffff;margin:24px 0 0 24px}
+    .back-sum-money{font-size:56px;margin-left:24px;margin-top:14px;font-weight:bold;color:#ffffff}
+    .back-change{font-size:14px;font-weight:400;color:#ffdec0;margin-top:4px;margin-left:24px}
+    .sum{font-size:16px;font-weight:400;color:#ffffff;margin:32px 0 0 32px}
+    .sum-money{font-size:56px;margin-left:32px;margin-top:14px;font-weight:bold;color:#ffffff}
+    .change{font-size:14px;font-weight:400;color:#FFF;margin-top:4px}
+    .box1-change{font-size:14px;font-weight:400;color:#ffdec0;margin-top:4px;margin-left:32px}
+    .box-1-change-img{width:16px;height:10px}
+    .box-2{height:385px;display:flex;justify-content:space-between;margin:24px 12px 0 12px;flex:1}
+    .box-2-1{height:385px;background:linear-gradient(180deg,#5ae8ff 0%,#34b3ef 100%);border-radius:20px 20px 20px 20px;opacity:1;flex:4;margin:24px 12px 0 12px}
+    .ico-img{width:74px;height:74px;margin-top:40px;margin-left:24px}
+    .img-ico-img{width:74px;height:74px}
+    .box-2-back{margin-top:100px}
+    .back-sum{font-size:16px;font-weight:400;color:#ffffff;margin:24px 0 0 24px}
+    .back-sum-money{font-size:40px;margin-left:24px;margin-top:14px;font-weight:bold;color:#ffffff}
+    .back-change{font-size:14px;font-weight:400;color:#ffdec0;margin-top:4px;margin-left:24px}
+    .back-change-img{width:16px;height:10px}
+    .box-2-2{height:385px;background:#1962EC;border-radius:20px 20px 20px 20px;opacity:1;flex:1}
+    .newbox-3{flex:7;min-width:235px;height:385px;margin:24px 12px 0 12px}
+    .newbox-3-1{width:100%;height:180px;background:#5119EC;border-radius:20px 20px 20px 20px;opacity:1;display:flex;justify-content:space-between;position:relative}
+    .newbox-3-2{width:100%;height:180px;background:#FC9131;border-radius:20px 20px 20px 20px;opacity:1;display:flex;justify-content:space-between;position:relative;margin-top:25px}
+    .newbox-3-1-img{width:160px;height:130px;position:absolute;bottom:0;right:30px}
+    .newbox-5{flex:1;min-width:400px;height:576px;margin:24px 12px 0 12px;display:flex;justify-content:space-between}
+    .newbox-5-1{flex:1;min-width:150px;height:576px;background:#FFFFFF;border-radius:20px 20px 20px 20px;opacity:1;margin:24px 12px 0 12px}
+    .box-3{height:385px;background:linear-gradient(135deg,#f7fdff 0%,#ebf1fc 100%);border-radius:20px 20px 20px 20px;opacity:1;margin:24px 12px 0 12px;flex:1}
+    .box-3-head{padding:24px 24px 12px 24px;display:flex;justify-content:space-between}
+    .title{font-size:18px;font-weight:bold;color:#333333;padding-right:10px;position:relative;top:3px;margin-bottom:10px}
+    .rod{display:inline-block;width:4px;height:15px;background:#00ce9b;border-radius:0px 0px 0px 0px;opacity:1}
+    .tags-box{margin-bottom:10px}
+    .tags-box-span{display:inline-block;width:40px;height:32px;background:#ffffff;opacity:1;font-size:14px;font-weight:400;color:#333333;line-height:32px;text-align:center;cursor:pointer}
+    .curtag{background:#00ce9b;color:#ffffff}
+    div::-webkit-scrollbar{width:6px}
+    div::-webkit-scrollbar-track{background:#ebf1fc;border-radius:2px}
+    div::-webkit-scrollbar-thumb{background:#e5e5e7;border-radius:10px}
+    div::-webkit-scrollbar-thumb:hover{background:#e5e5e7}
+    .list-box{width:98%;height:310px;background:#ffffff;border-radius:10px 10px 10px 10px;opacity:1;margin:auto;overflow:hidden;overflow-y:auto;white-space:nowrap}
+    .list-box::-webkit-scrollbar{display:none}
+    .title-box{width:456px;width:90%;background:#fafafa;border-radius:0px 0px 0px 0px;opacity:1;margin:auto;display:flex;justify-content:space-around;padding:12px 0;font-size:14px;font-weight:500;color:#666666;margin-top:24px}
+    .title-1{flex:1;text-align:center}
+    .title-2{flex:2;text-align:center}
+    .title-3{flex:2;text-align:center}
+    .title-4{flex:2;text-align:center}
+    .overflow-box{width:100%;height:240px;overflow:hidden;overflow-y:auto;white-space:nowrap}
+    .content-box{width:90%;opacity:1;margin:auto;display:flex;justify-content:space-around;font-size:14px;font-weight:500;color:#666666;margin-top:24px}
+    .title-1{flex:1;text-align:center}
+    .title-2{flex:2;text-align:center}
+    .title-3{flex:2;text-align:center}
+    .title-4{flex:2;text-align:center}
+    .box-4{flex:1;margin-top:24px;margin:24px 12px 0 12px}
+    .box-4-1{width:100%;height:276px;background:#ffffff;border-radius:20px 20px 20px 20px;opacity:1}
+    .box-4-2{width:100%;height:276px;background:#ffffff;border-radius:20px 20px 20px 20px;opacity:1;margin-top:24px}
+    .box-5{flex:1;height:576px;background:#ffffff;border-radius:20px 20px 20px 20px;opacity:1;margin:24px 12px 0 12px}
+    .box-5-each{width:95%;height:160px;background:#fafafc;border-radius:20px 20px 20px 20px;opacity:1;margin:auto;margin-top:24px;display:flex;justify-content:space-between;align-items:center}
+    .box-5-text{margin-left:24px}
+    .today{font-size:16px;font-weight:400;color:#999999}
+    .number{font-size:30px;font-weight:bold;color:#FFF;}
+    .number-b{font-size:40px;font-weight:bold;color:#333333;margin-top:14px}
+    .relatively-1{font-size:14px;font-weight:400;color:#73bda4;margin-top:4px}
+    .relatively-1-img{width:16px;height:9px}
+    .relatively-2{font-size:14px;font-weight:400;color:#87abeb;margin-top:4px}
+    .relatively-3{font-size:14px;font-weight:400;color:#f17979;margin-top:4px}
+    .box-5-img{flex:1;margin-right:22px}
+    .img-box-5-img{width:100%}
+    .box-6{min-width:360px;flex:1;height:576px;background:#ffffff;border-radius:20px 20px 20px 20px;opacity:1;margin:24px 12px 0 12px}
+    .box-6-each{flex:1;height:160px;background:#f5f5f9;border-radius:20px 20px 20px 20px;opacity:1;padding:20px 0 20px 20px;margin:24px 12px 0 12px}
+    .box-6-each-title{font-weight:400;color:#333333}
+    .box-6-each-title-img{width:28px;height:28px;vertical-align:middle;margin-right:8px}
+    .box-6-each-number{font-size:40px;font-weight:bold;color:#333333;margin-top:12px}
+    .box-6-each-compare{font-size:14px;font-weight:400;color:#333333}
+    .box-6-each-compare-img{width:16px;height:9px}
+    .single-1{background:#eee5ff}
+    .single-2{background:#fef3e8}
+    .single-3{background:#e9fcec}
+    .single-4{background:#f0f6fb}
+    .single-5{background:#ffe9ed}
+    .single-6{background:#f5f5f9}
+    .box-7{flex:1;height:420px;background:#ffffff;border-radius:20px 20px 20px 20px;opacity:1;margin:24px 12px 0 12px}
+    .curtag1{background-color:#00CE9B;color:#FFF}
+    .charts-box{display:flex;align-items:center;font-size:18px;color:#333;padding:10px 24px}
+    .line{width:4px;height:15px;margin-right:10px;background:#00CE9B}
+    @media (max-width:900px){.flex-1{flex-wrap:wrap}.flex-2{flex-wrap:wrap}}
+    @media (max-width:600px){.box-1,.newbox-3{min-width:400px}.box-4{min-width:400px}.box-5{min-width:400px}.box-5-img{display:none}}
+    @media (max-width:400px){.box-3-head{flex-wrap:wrap}.box-1,.newbox-3{min-width:100%}.box-4{min-width:100%}.box-5{min-width:100%}}
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul class="nav nav-tabs">
+            {if($isSuperAdmin)}
+            <li class="active"><a href="#one" data-toggle="tab">{:__('Dashboard')}</a></li>
+            {else/}
+            <li class="active"><a href="#one" data-toggle="tab">{:__('Dashboard')}</a></li>
+            {/if}
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            {if(!$isSuperAdmin)}
+            <div class="tab-pane fade in  active" id="one" >
+
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-red"><i class="fa fa-cubes"></i></span>
+                            <div class="sm-st-info">
+                                <span>{$salesmanTotalOrderNum}</span>
+                                {:__('Total orders')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-violet"><i class="fa fa-cc-discover"></i></span>
+                            <div class="sm-st-info">
+                                <span>{$salesmanTotalOrderMoney}</span>
+                                {:__('Order amount (USDT)')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-blue"><i class="fa fa-cube"></i></span>
+                            <div class="sm-st-info">
+                                <span>{$salesmanTotalOrderNumAdd}</span>
+                                {:__('Today orders')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-green"><i class="fa fa-cc-paypal"></i></span>
+                            <div class="sm-st-info">
+                                <span>{$salesmanTotalOrderMoneyAdd}</span>
+                                {:__('Today Order amount (USDT)')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="echart" class="btn-refresh" style="height:300px;width:100%;"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            {else /}
+            <div class="tab-pane fade in active" id="one">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="echart" class="btn-refresh" style="height:300px;width:100%;"></div>
+                    </div>
+                    <div class="col-lg-12" style="background: #f7f7fa;padding-top: 30px;">
+                        <div class="commonsearch-table">
+                            <form class="form-horizontal form-commonsearch nice-validator n-default n-bootstrap searchForm"
+                            novalidate="" method="post" action="">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                            <label for="searchtime" class="control-label col-xs-4">
+                                                {:__('Screening time')}
+                                            </label>
+                                            <div class="col-xs-8">
+                                                <input type="hidden" class="form-control operate" name="searchtime-operate"
+                                                data-name="searchtime" value="RANGE" readonly="">
+                                                <input type="text" class="form-control datetimerange" name="searchtime"
+                                                value="" placeholder="{:__('Screening time')}" id="searchtime" data-index="9">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                            <div class="col-sm-8 col-xs-offset-4">
+                                                <button type="submit" class="btn btn-success" formnovalidate="">
+                                                    {:__('Submit')}
+                                                </button>
+                                                <button type="reset" class="btn btn-default">
+                                                    {:__('Reset')}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12" style="background: #f7f7fa;">
+                        
+                        <div class="content">
+                            
+                            <div class="floor1-box">
+                                <div class="flex-1">
+                                    <div class="newbox-3">
+                                        <div class="flex-1">
+                                            <div class="floor1-each each-1" style="margin:0 12px 0 12px">
+                                                <div class="text-box">
+                                                    <div class="text-box-text">{:__('Total users')}</div>
+                                                    <div class="number totalUser">{$totalUser}</div>
+                                                    <div class="change">
+                                                        {:__('Newly added today')}+<span>{$totalUserAdd}</span>
+                                                        <img class="up-icon" src="/assets/img/change-2.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="floor1-each-img-r"><img class="floor1-each-image" src="/assets/img/user.png" alt=""></div>
+                                            </div>
+                                            <div class="floor1-each each-2" style="margin:0 12px 0 12px">
+                                                <div class="text-box">
+                                                    <div class="text-box-text">{:__('Total user recharge (USDT)')}</div>
+                                                    <div class="number totalUserRecharge">{$totalUserRecharge}</div>
+                                                    <div class="change">{:__('Newly added today')}+<span>{$totalUserRechargeAdd}</span><img class="up-icon" src="/assets/img/change-2.png" alt=""></div>
+                                                </div>
+                                                <div class="floor1-each-img-r"><img class="floor1-each-image" src="/assets/img/serve.png" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-2">
+                                            <div class="floor1-each each-3">
+                                                <div class="text-box">
+                                                    <div class="text-box-text">{:__('Total orders')}</div>
+                                                    <div class="number totalOrderNum">{$totalOrderNum}</div>
+                                                    <div class="change">{:__('Newly added today')}+<span>{$totalOrderNumAdd}</span><img class="up-icon" src="/assets/img/change-2.png" alt=""></div>
+                                                </div>
+                                                <div class="floor1-each-img-r"><img class="floor1-each-image" src="/assets/img/member.png" alt=""></div>
+                                                
+                                            </div>
+                                            <div class="floor1-each each-4">
+                                                <div class="text-box">
+                                                    <div class="text-box-text">{:__('Total order amount (USDT)')}</div>
+                                                    <div class="number totalOrderMoney">{$totalOrderMoney}</div>
+                                                    <div class="change">{:__('Newly added today')}+<span>{$totalOrderMoneyAdd}</span><img class="up-icon" src="/assets/img/change-2.png" alt=""></div>
+                                                </div>
+                                                <div class="floor1-each-img-r"><img class="floor1-each-image" src="/assets/img/serve.png" alt=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-2">
+                                    <div class="box-1">
+                                        <div class="sum">{:__('Total orders')}</div>
+                                        <div class="sum-money totalOrderNum">{$totalOrderNum}</div>
+                                        <div class="box1-change">{:__('Newly added today')}+
+                                            <span>{$totalOrderNumAdd}</span>
+                                            <img class="box-1-change-img" src="/assets/img/change-2.png" alt=""></div>
+                                        <div class="back">
+                                            <div>
+                                                <div class="back-sum">{:__('Total order amount (USDT)')}</div>
+                                                <div class="back-sum-money totalOrderMoney">{$totalOrderMoney}</div>
+                                                <div class="back-change">{:__('Newly added today')}+ <span>{$totalOrderMoneyAdd}</span><img class="box-1-change-img" src="/assets/img/change-2.png" alt=""></div>
+                                            </div>
+                                            <div style="padding-right: 24px;">
+                                                <div class="back-sum">{:__('Total order commission (USDT)')}</div>
+                                                <div class="back-sum-money totalOrderExpense">{$totalOrderExpense}</div>
+                                                <div class="back-change"> {:__('Newly added today')}+ <span>{$totalOrderExpenseAdd}</span><img class="box-1-change-img" src="/assets/img/change-2.png" alt=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="app" class="floor1-box">
+                                <div class="flex-1 flex-rank">
+                                    <div class="box-7">
+                                        <div class="box-3-head">
+                                            <div class="title">
+                                                <span class="rod">
+                                                </span>
+                                                <!-- 下单排行(数量) -->
+                                                 {:__('Order ranking (quantity)')}
+                                            </div>
+                                            <div id="list1" class="tags-box">
+                                                <span class="tags-box-span" data-range="1" style="border-radius: 6px 0px 0px 6px;">{:__('Day')}</span>
+                                                <span class="tags-box-span" data-range="2">
+                                                    {:__('Month')}
+                                                </span>
+                                                <span class="tags-box-span" data-range="3">
+                                                    {:__('Year')}
+                                                </span>
+                                                <span class="tags-box-span curtag1" data-range="4" style="border-radius: 0px 6px 6px 0px;">
+                                                    {:__('Total')}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="list-box list1">
+                                            <div class="title-box">
+                                                <div class="title-1">
+                                                    {:__('Ranking')}
+                                                </div>
+                                                <div class="title-2">
+                                                    {:__('User')}
+                                                </div>
+                                                <div class="title-3">
+                                                    {:__('Quantity')}
+                                                </div>
+                                                <div class="title-4">
+                                                    {:__('Amount')}
+                                                </div>
+                                            </div>
+                                            <div class="overflow-box"></div>
+                                        </div>
+                                    </div>
+                                    <div class="box-7">
+                                        <div class="box-3-head">
+                                            <div class="title">
+                                                <span class="rod">
+                                                </span>
+                                                {:__('Order ranking (amount)')}
+                                            </div>
+                                            <div id="list2" class="tags-box">
+                                                <span class="tags-box-span" data-range="1" style="border-radius: 6px 0px 0px 6px;">{:__('Day')}</span>
+                                                <span class="tags-box-span" data-range="2">
+                                                    {:__('Month')}
+                                                </span>
+                                                <span class="tags-box-span" data-range="3">
+                                                    {:__('Year')}
+                                                </span>
+                                                <span class="tags-box-span curtag1" data-range="4" style="border-radius: 0px 6px 6px 0px;">
+                                                    {:__('Total')}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="list-box list2">
+                                            <div class="title-box">
+                                                <div class="title-1">
+                                                    {:__('Ranking')}
+                                                </div>
+                                                <div class="title-2">
+                                                    {:__('User')}
+                                                </div>
+                                                <div class="title-3">
+                                                    {:__('Quantity')}
+                                                </div>
+                                                <div class="title-4">
+                                                    {:__('Amount')}
+                                                </div>
+                                            </div>
+                                            <div class="overflow-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-2 flex-rank">
+                                    <div class="box-7">
+                                        <div class="box-3-head">
+                                            <div class="title">
+                                                <span class="rod">
+                                                </span>
+                                                {:__('Recharge ranking (amount)')}
+                                            </div>
+                                            <div id="list3" class="tags-box">
+                                                <span class="tags-box-span" data-range="1" style="border-radius: 6px 0px 0px 6px;">{:__('Day')}</span>
+                                                <span class="tags-box-span" data-range="2">
+                                                    {:__('Month')}
+                                                </span>
+                                                <span class="tags-box-span" data-range="3">
+                                                    {:__('Year')}
+                                                </span>
+                                                <span class="tags-box-span curtag1" data-range="4" style="border-radius: 0px 6px 6px 0px;">
+                                                    {:__('Total')}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="list-box list3">
+                                            <div class="title-box">
+                                                <div class="title-1">
+                                                    {:__('Ranking')}
+                                                </div>
+                                                <div class="title-2">
+                                                    {:__('User')}
+                                                </div>
+                                                <div class="title-3">
+                                                    {:__('Quantity')}
+                                                </div>
+                                                <div class="title-4">
+                                                    {:__('Amount')}
+                                                </div>
+                                            </div>
+                                            <div class="overflow-box"></div>
+                                        </div>
+                                    </div>
+                                    <div class="box-7">
+                                        <div class="box-3-head">
+                                            <div class="title">
+                                                <span class="rod">
+                                                </span>
+                                                {:__('Order ranking (quantity)')}
+                                            </div>
+                                            <div id="list4" class="tags-box">
+                                                <span class="tags-box-span" data-range="1" style="border-radius: 6px 0px 0px 6px;">{:__('Day')}</span>
+                                                <span class="tags-box-span" data-range="2">
+                                                    {:__('Month')}
+                                                </span>
+                                                <span class="tags-box-span" data-range="3">
+                                                    {:__('Year')}
+                                                </span>
+                                                <span class="tags-box-span curtag1" data-range="4" style="border-radius: 0px 6px 6px 0px;">
+                                                    {:__('Total')}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="list-box list4">
+                                            <div class="title-box">
+                                                <div class="title-1">
+                                                    {:__('Ranking')}
+                                                </div>
+                                                <div class="title-2">
+                                                    {:__('Salesman')}
+                                                </div>
+                                                <div class="title-3">
+                                                    {:__('Quantity')}
+                                                </div>
+                                                <div class="title-4">
+                                                    {:__('Amount')}
+                                                </div>
+                                            </div>
+                                            <div class="overflow-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            {/if}
+            </div>
+        </div>
+    </div>
+</div>

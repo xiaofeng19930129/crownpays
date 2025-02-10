@@ -1,0 +1,24 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        {:build_toolbar('refresh,add,delete')}
+                        <a href="auth/admin/recharge" class="btn btn-info btn-dialog {:$auth->check('auth/admin/recharge')?'':'hide'}"  title="{:__('Admin recharge')}" ><i class="fa fa-money"></i>{:__('Admin recharge')}</a>
+                        <a href="auth/admin/deduction" class="btn btn-warning btn-dialog {:$auth->check('auth/admin/deduction')?'':'hide'}" title="{:__('Admin deduction')}" ><i class="fa fa-money">{:__('Admin deduction')}</i> </a>
+                    </div>
+                    
+                    <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
+                           data-operate-edit="{:$auth->check('auth/admin/edit')}"
+                           data-operate-del="{:$auth->check('auth/admin/del')}"
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

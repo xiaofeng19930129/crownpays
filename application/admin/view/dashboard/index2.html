@@ -1,0 +1,1178 @@
+<style>
+     html {
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   margin: 0;
+   padding: 0;
+ }
+
+ .box {
+   display: flex;
+ }
+
+ /* .menu {
+   min-width: 250px;
+   height: 100vh;
+   background: #4d4d4d;
+   border-radius: 0px 0px 0px 0px;
+   opacity: 1;
+ } */
+
+ .content {
+   flex: 1;
+   background: #f7f7fa;
+   height: 100vh;
+   overflow: hidden;
+   overflow-y: auto;
+   white-space: nowrap;
+ }
+
+ /* .head {
+   width: 100%;
+   height: 80px;
+   background: #ffffff;
+   border-radius: 0px 0px 0px 0px;
+   opacity: 1;
+ } */
+
+ .content {
+   flex: 1;
+   background: #f7f7fa;
+   height: 100vh;
+   overflow: hidden;
+   overflow-y: auto;
+   white-space: nowrap;
+ }
+
+ .head {
+   width: 100%;
+   height: 80px;
+   background: #ffffff;
+   border-radius: 0px 0px 0px 0px;
+   opacity: 1;
+ }
+
+ .floor1-box {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   /* flex-flow: row wrap; */
+   /* margin: 0 24px; */
+ }
+
+ .flex-1 {
+   flex: 1;
+   display: flex;
+   justify-content: space-around;
+   /* flex-wrap: wrap; */
+ }
+
+ .flex-2 {
+   flex: 1;
+   display: flex;
+   justify-content: space-around;
+   /* flex-wrap: wrap; */
+ }
+
+ .floor1-each {
+   /* width: 245px;
+        height: 154px; */
+   /* width: 327px; */
+   height: 154px;
+   flex: 1;
+   border-radius: 10px 10px 10px 10px;
+   opacity: 1;
+   /* margin-left: 24px; */
+   margin: 24px 12px 0 12px;
+
+   padding: 0 28px 0 32px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+ }
+
+ .text-box-text {
+   font-size: 16px;
+   font-weight: 400;
+   color: #FFF;
+ }
+
+
+ .floor1-each-img {
+   font-size: 14px;
+   font-weight: 400;
+   margin-top: 4px;
+ }
+
+ .floor1-each-img-r {
+   width: 16px;
+   height: 10px;
+ }
+
+ .change-img {
+   width: 78px;
+   height: 78px;
+ }
+
+ .floor1-each-img-r {
+   width: 78px;
+   height: 78px;
+ }
+
+ .each-1 {
+   background: #1962EC;
+
+ }
+
+ .each-2 {
+   background: #FC9131;
+
+ }
+
+ .each-3 {
+   background: #EB1918;
+
+ }
+
+ .each-4 {
+   background: #00CE9B;
+
+ }
+
+ .change {
+   color: #FFF;
+ }
+ .up-icon{
+     width: 16px;
+     height: 9px;
+ }
+
+ .boxs {
+   display: flex;
+   /* justify-content: space-between; */
+   /* justify-content: space-around; */
+   flex-wrap: wrap;
+ }
+
+ .boxs-1 {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   /* flex-flow: row wrap; */
+   /* margin: 0 24px; */
+ }
+
+ .boxs:after {
+   flex: auto;
+ }
+
+ 
+ .each-box {
+  display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+ .box-l {
+  flex: 1;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+ }
+ .box-r {
+  flex: 1;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+ }
+
+ .box-1 {
+   /* max-width: 518px; */
+   min-width: 200px;
+   height: 385px;
+   /* background: linear-gradient(180deg, #54e16e 0%, #4bd2a6 100%); */
+   background: linear-gradient(180deg, #02DAA4 0%, #019D76 100%);
+   border-radius: 20px 20px 20px 20px;
+   /* margin-top: 24px;
+   margin-left: 24px; */
+   margin: 24px 12px 0 12px;
+   flex: 7;
+ }
+
+ .back {
+   /* max-width: 470px;
+   min-width: 370px; */
+   width: 90%;
+   height: 164px;
+   background: #0F9B80;
+   border-radius: 20px 20px 20px 20px;
+   margin: auto;
+   margin-top: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .back-sum {
+   font-size: 16px;
+   font-weight: 400;
+   color: #ffffff;
+   margin: 24px 0 0 24px;
+ }
+
+ .back-sum-money {
+   font-size: 56px;
+   margin-left: 24px;
+   margin-top: 14px;
+   font-weight: bold;
+   color: #ffffff;
+ }
+
+ .back-change {
+   font-size: 14px;
+   font-weight: 400;
+   color: #ffdec0;
+   margin-top: 4px;
+   margin-left: 24px;
+ }
+
+ .sum {
+   font-size: 16px;
+   font-weight: 400;
+   color: #ffffff;
+   margin: 32px 0 0 32px;
+ }
+
+ .sum-money {
+   font-size: 56px;
+   margin-left: 32px;
+   margin-top: 14px;
+   font-weight: bold;
+   color: #ffffff;
+ }
+
+ .change {
+   font-size: 14px;
+   font-weight: 400;
+   color: #FFF;
+   margin-top: 4px;
+ }
+
+ .box1-change {
+   font-size: 14px;
+   font-weight: 400;
+   color: #ffdec0;
+   margin-top: 4px;
+   margin-left: 32px;
+ }
+
+ .box-1-change-img {
+   width: 16px;
+   height: 10px;
+ }
+
+ .box-2 {
+   /* max-width: 532px; */
+   height: 385px;
+   display: flex;
+   justify-content: space-between;
+   /* margin-top: 24px; */
+   margin: 24px 12px 0 12px;
+   flex: 1;
+   /* margin: 24px 24px 0 24px; */
+ }
+
+ .box-2-1 {
+   /* max-width: 254px; */
+   height: 385px;
+   background: linear-gradient(180deg, #5ae8ff 0%, #34b3ef 100%);
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   flex: 4;
+   /* margin-right: 14px;
+   margin-top: 24px; */
+   margin: 24px 12px 0 12px;
+ }
+
+ .ico-img {
+   width: 74px;
+   height: 74px;
+   margin-top: 40px;
+   margin-left: 24px;
+ }
+
+ .img-ico-img {
+   width: 74px;
+   height: 74px;
+ }
+
+ .box-2-back {
+   margin-top: 100px;
+ }
+
+ .back-sum {
+   font-size: 16px;
+   font-weight: 400;
+   color: #ffffff;
+   margin: 24px 0 0 24px;
+ }
+
+ .back-sum-money {
+   font-size: 40px;
+   margin-left: 24px;
+   margin-top: 14px;
+   font-weight: bold;
+   color: #ffffff;
+ }
+
+ .back-change {
+   font-size: 14px;
+   font-weight: 400;
+   color: #ffdec0;
+   margin-top: 4px;
+   margin-left: 24px;
+ }
+
+ .back-change-img {
+   width: 16px;
+   height: 10px;
+ }
+
+ .box-2-2 {
+   /* max-width: 254px; */
+   height: 385px;
+   background: #1962EC;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   flex: 1;
+
+ }
+
+ /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+ /* new2-3 */
+ .newbox-3 {
+   flex: 7;
+   /* max-width: 525px; */
+   min-width: 235px;
+   /* width: 525px; */
+   height: 385px;
+   margin: 24px 12px 0 12px;
+
+ }
+
+ .newbox-3-1 {
+   width: 100%;
+   height: 180px;
+   background: #5119EC;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+ }
+
+ .newbox-3-2 {
+   width: 100%;
+   height: 180px;
+   background: #FC9131;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   margin-top: 25px;
+ }
+
+ .newbox-3-1-img {
+   width: 160px;
+   height: 130px;
+   position: absolute;
+   bottom: 0;
+   right: 30px;
+ }
+
+ .newbox-5 {
+  flex: 1;
+  /* max-width: 524px; */
+  min-width: 400px;
+   /* width: 524px; */
+   height: 576px;
+   margin: 24px 12px 0 12px;
+   display: flex;
+   justify-content: space-between;
+ }
+ .newbox-5-1 {
+  flex: 1;
+  /* max-width: 250px; */
+  min-width: 150px;
+height: 576px;
+background: #FFFFFF;
+border-radius: 20px 20px 20px 20px;
+opacity: 1;
+/* margin-top: 24px; */
+margin: 24px 12px 0 12px;
+ }
+
+ /* 2-3 */
+ .box-3 {
+   /* max-width: 524px; */
+   height: 385px;
+   background: linear-gradient(135deg, #f7fdff 0%, #ebf1fc 100%);
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   margin: 24px 12px 0 12px;
+   flex: 1;
+ }
+
+ .box-3-head {
+   padding: 24px 24px 12px 24px;
+   display: flex;
+   justify-content: space-between;
+   
+ }
+
+ .title {
+   font-size: 18px;
+   font-weight: bold;
+   color: #333333;
+   padding-right: 10px;
+   position: relative;
+   top: 3px;
+   margin-bottom: 10px;
+ }
+
+ .rod {
+   display: inline-block;
+   width: 4px;
+   height: 15px;
+   background: #00ce9b;
+   border-radius: 0px 0px 0px 0px;
+   opacity: 1;
+ }
+ 
+ .tags-box{
+     margin-bottom: 10px;
+ }
+
+ .tags-box-span {
+   display: inline-block;
+   width: 40px;
+   height: 32px;
+   background: #ffffff;
+   opacity: 1;
+   font-size: 14px;
+   font-weight: 400;
+   color: #333333;
+   line-height: 32px;
+   text-align: center;
+   cursor: pointer;
+ }
+
+ .curtag {
+   background: #00ce9b;
+   color: #ffffff;
+ }
+
+ div::-webkit-scrollbar {
+   width: 6px;
+ }
+
+ div::-webkit-scrollbar-track {
+   background: #ebf1fc;
+   border-radius: 2px;
+ }
+
+ div::-webkit-scrollbar-thumb {
+   background: #e5e5e7;
+   border-radius: 10px;
+ }
+
+ div::-webkit-scrollbar-thumb:hover {
+   background: #e5e5e7;
+ }
+
+ .list-box {
+   width: 98%;
+   height: 310px;
+   background: #ffffff;
+   border-radius: 10px 10px 10px 10px;
+   opacity: 1;
+   margin: auto;
+   overflow: hidden;
+   overflow-y: auto;
+   white-space: nowrap;
+ }
+ .list-box::-webkit-scrollbar{
+     display: none;
+ }
+
+ .title-box {
+   width: 456px;
+   width: 90%;
+   background: #fafafa;
+   border-radius: 0px 0px 0px 0px;
+   opacity: 1;
+   margin: auto;
+   display: flex;
+   justify-content: space-around;
+   padding: 12px 0;
+   font-size: 14px;
+   font-weight: 500;
+   color: #666666;
+   margin-top: 24px;
+ }
+
+ .title-1 {
+   flex: 1;
+   text-align: center;
+ }
+
+ .title-2 {
+   flex: 3;
+   padding-left: 20px;
+ }
+
+ .title-3 {
+   flex: 2;
+   text-align: center;
+ }
+
+ .title-4 {
+   flex: 1;
+   text-align: center;
+ }
+
+ .overflow-box {
+   width: 100%;
+   height: 240px;
+   overflow: hidden;
+   overflow-y: auto;
+   white-space: nowrap;
+ }
+
+ .content-box {
+   width: 90%;
+   opacity: 1;
+   margin: auto;
+   display: flex;
+   justify-content: space-around;
+   font-size: 14px;
+   font-weight: 500;
+   color: #666666;
+   margin-top: 24px;
+ }
+
+ .title-1 {
+   flex: 1;
+   text-align: center;
+ }
+
+ .title-2 {
+   flex: 3;
+   padding-left: 20px;
+ }
+
+ .title-3 {
+   flex: 2;
+   text-align: center;
+ }
+
+ .title-4 {
+   flex: 1;
+   text-align: center;
+ }
+
+ /* 4 */
+ .box-4 {
+   flex: 1;
+   margin-top: 24px;
+   /* max-width: 525px; */
+
+   margin: 24px 12px 0 12px;
+ }
+
+ .box-4-1 {
+   /* width: 525px; */
+   width: 100%;
+   height: 276px;
+   background: #ffffff;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+ }
+
+ .box-4-2 {
+   /* width: 525px; */
+   width: 100%;
+   height: 276px;
+   background: #ffffff;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   margin-top: 24px;
+ }
+
+ /* 5 */
+ .box-5 {
+   /* max-width: 525px; */
+   flex: 1;
+   height: 576px;
+   background: #ffffff;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   /* margin: 24px 24px 0 24px; */
+   margin: 24px 12px 0 12px;
+   /* padding: 0 14px; */
+
+ }
+
+ .box-5-each {
+   /* max-width: 455px; */
+   width: 95%;
+   height: 160px;
+   background: #fafafc;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   margin: auto;
+   margin-top: 24px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .box-5-text {
+   margin-left: 24px;
+ }
+
+ .today {
+   font-size: 16px;
+   font-weight: 400;
+   color: #999999;
+ }
+
+ .number {
+   font-size: 40px;
+   font-weight: bold;
+   color: #FFF;
+   margin-top: 14px;
+ }
+
+ .number-b {
+   font-size: 40px;
+   font-weight: bold;
+   color: #333333;
+   margin-top: 14px;
+ }
+
+ .relatively-1 {
+   font-size: 14px;
+   font-weight: 400;
+   color: #73bda4;
+   margin-top: 4px;
+ }
+
+ .relatively-1-img {
+   width: 16px;
+   height: 9px;
+ }
+
+ .relatively-2 {
+   font-size: 14px;
+   font-weight: 400;
+   color: #87abeb;
+   margin-top: 4px;
+ }
+
+ .relatively-3 {
+   font-size: 14px;
+   font-weight: 400;
+   color: #f17979;
+   margin-top: 4px;
+ }
+
+ .box-5-img {
+   flex: 1;
+   margin-right: 22px;
+ }
+
+ .img-box-5-img {
+   width: 100%;
+
+ }
+
+ /* 6 */
+ .box-6 {
+   /* max-width: 500px; */
+   min-width: 360px;
+   flex: 1;
+   height: 576px;
+   background: #ffffff;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   /* margin-top: 24px; */
+   margin: 24px 12px 0 12px;
+   /* padding: 18px 12px; */
+   /* display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   align-items: center; */
+ }
+
+ .box-6-each {
+   flex: 1;
+   /* min-width: 178px;
+   max-width: 230px; */
+   height: 160px;
+   background: #f5f5f9;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   padding: 20px 0 20px 20px;
+   margin: 24px 12px 0 12px;
+ }
+
+ .box-6-each-title {
+   /* font-size: 16px; */
+   font-weight: 400;
+   color: #333333;
+ }
+
+ .box-6-each-title-img {
+   width: 28px;
+   height: 28px;
+   vertical-align: middle;
+   margin-right: 8px;
+ }
+
+ .box-6-each-number {
+   font-size: 40px;
+   font-weight: bold;
+   color: #333333;
+   margin-top: 12px;
+ }
+
+ .box-6-each-compare {
+   font-size: 14px;
+   font-weight: 400;
+   color: #333333;
+   /* margin-top: 4px; */
+ }
+
+ .box-6-each-compare-img {
+   width: 16px;
+   height: 9px;
+ }
+
+ .single-1 {
+   background: #eee5ff;
+ }
+
+ .single-2 {
+   background: #fef3e8;
+ }
+
+ .single-3 {
+   background: #e9fcec;
+ }
+
+ .single-4 {
+   background: #f0f6fb;
+ }
+
+ .single-5 {
+   background: #ffe9ed;
+ }
+
+ .single-6 {
+   background: #f5f5f9;
+ }
+
+ .box-7 {
+   /* max-width: 525px; */
+   flex: 1;
+   height: 420px;
+   background: #ffffff;
+   border-radius: 20px 20px 20px 20px;
+   opacity: 1;
+   /* margin-top: 24px; */
+   margin: 24px 12px 0 12px;
+ }
+
+ /* .box-7-2 {
+  margin: 24px 24px 0 24px;
+ } */
+
+ .curtag1 {
+   background-color: #00CE9B;
+   color: #FFF;
+ }
+
+
+
+.charts-box{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    padding: 10px 24px;
+}
+.line{
+    width:4px;
+    height: 15px;
+    margin-right: 10px;
+    background: #00CE9B;
+}
+
+@media (max-width: 900px) {
+    .flex-1{
+    flex-wrap: wrap;
+}
+  .flex-2{
+    flex-wrap: wrap;
+}
+}
+
+@media (max-width: 600px) {
+    .box-1,.newbox-3{
+        min-width: 400px;
+    }
+    .box-4{
+        min-width: 400px;
+    }
+    .box-5{
+        min-width: 400px;
+    }
+    .box-5-img{
+        display: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .box-3-head{
+        flex-wrap: wrap;
+    }
+    .box-1,.newbox-3{
+        min-width: 100%;
+    }
+    .box-4{
+        min-width: 100%;
+    }
+    .box-5{
+        min-width: 100%;
+    }
+
+
+}
+
+
+
+
+
+
+</style>
+<div class="box">
+    <div class="dialog-box" style="display: none;">
+        <div class="dialog" style="position:fixed;z-index:1000;width:100%;height:100%;left:0;right:0;opacity:0.5;background:#000;">
+            
+        </div>
+        <div class="hint-box" style="z-index:1000;box-shadow: 1px 1px 10px 1px #999;width: 400px;">
+    <div class="hint-subject">
+        
+      <div class="texts-box">
+          <p style="text-align:center;">欢迎使用AJAX同城预约上门服务家政系统<br>此后台是演示后台，和前端演示不对应<br>
+          不支持任何形式的众筹<br>
+          </p>
+      </div>
+    </div>
+    <div class="hint-btn-box">
+      <div class="hint-btn-1" onclick="confirm">确定</div>
+      <div style="width: 30px;height: 1px;"></div>
+      <div class="hint-btn-2">关闭</div>
+    </div>
+    </div>
+  </div>
+    <!-- <div class="menu"></div> -->
+    <div class="content">
+        <!-- <div class="head"></div> -->
+
+        <div class="floor1-box">
+            <div class="flex-1">
+               
+
+                <div class="floor1-each each-1">
+                    <div class="text-box">
+                        <div class="text-box-text">总用户</div>
+                        <div class="number">2</div>
+                        <div class="change">
+                            比昨日+0                            <img class="up-icon" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="floor1-each-img-r">
+                        <img src="/assets/addons/service/image/user.png" alt="">
+                    </div>
+                </div>
+                <div class="floor1-each each-2">
+                    <div class="text-box">
+                        <div class="text-box-text">总会员</div>
+                        <div class="number">0</div>
+                        <div class="change">
+                            比昨日+0                            <img class="up-icon" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="floor1-each-img-r">
+                        <img src="/assets/addons/service/image/member.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-2">
+                
+                <div class="floor1-each each-3">
+                    <div class="text-box">
+                        <div class="text-box-text">总服务人员</div>
+                        <div class="number">2</div>
+                        <div class="change">
+                            比昨日+0                            <img class="up-icon" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="floor1-each-img-r">
+                        <img src="/assets/addons/service/image/serve.png" alt="">
+                    </div>
+                </div>
+                <div class="floor1-each each-4">
+                    <div class="text-box">
+                        <div class="text-box-text">总商户</div>
+                        <div class="number">2</div>
+                        <div class="change">
+                            比昨日+0                            <img class="up-icon" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="floor1-each-img-r">
+                        <img src="/assets/addons/service/image/serve.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="floor1-box">
+            <div class="flex-1">
+                <div class="box-1">
+                    
+                    <div class="sum">订单总金额（元）</div>
+                    <div class="sum-money">1</div>
+                    <div class="box1-change">
+                        比昨日+0.00                        <img class="box-1-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                    </div>
+                    <div class="back">
+                        
+                        <div>
+                            <div class="back-sum">总订单</div>
+                        <div class="back-sum-money">2</div>
+                        <div class="back-change">
+                            比昨日+0                            <img class="box-1-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                        </div>
+                        <div style="padding-right: 24px;">
+                            <div class="back-sum">总佣金（元）</div>
+                        <div class="back-sum-money">0.90</div>
+                        <div class="back-change">
+                            比昨日+0.00                            <img class="box-1-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-2-1">
+                    <div class="ico-img">
+                        <img class="img-ico-img" src="/assets/addons/service/image/recharge.png" alt="">
+                    </div>
+                    <div class="box-2-back">
+                        <div style="height: 1px"></div>
+                        <div class="back-sum">总充值（元）</div>
+                        <div class="back-sum-money">0.01</div>
+                        <div class="back-change">
+                            比昨日+0.00                            <img class="back-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-2">
+                <div class="box-2-1">
+                    <div class="ico-img">
+                        <img class="img-ico-img" src="/assets/addons/service/image/recharge.png" alt="">
+                    </div>
+                    <div class="box-2-back">
+                        <div style="height: 1px"></div>
+                        <div class="back-sum">总提现（元）</div>
+                        <div class="back-sum-money">0.01</div>
+                        <div class="back-change">
+                            比昨日+0.00                            <img class="back-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="newbox-3">
+                    <div class="newbox-3-1">
+                        <div class="newbox-3-1-text">
+                            <div style="height: 8px"></div>
+                            <div class="back-sum">服务人员保证金（元）</div>
+                            <div class="back-sum-money">0</div>
+                            <div class="back-change">
+                                比昨日+0.00                                <img class="back-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="newbox-3-1-img">
+                            <img class="newbox-3-1-img" src="/assets/addons/service/image/Intersect2.png" alt="">
+                        </div>
+                    </div>
+                    <!-- <div class="newbox-3-2"></div> -->
+                    <div class="newbox-3-2">
+                        <div class="newbox-3-1-text">
+                            <div style="height: 8px"></div>
+                            <div class="back-sum">商户保证金（元）</div>
+                            <div class="back-sum-money">0.01</div>
+                            <div class="back-change">
+                                比昨日+0.00                                <img class="back-change-img" src="/assets/addons/service/image/change-2.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="newbox-3-1-img">
+                            <img class="newbox-3-1-img" src="/assets/addons/service/image/Intersect2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="floor1-box">
+            <div class="flex-1">
+                <div class="box-4">
+                    <div class="box-4-1">
+                        <div class="nav-tabs-custom charts-custom">
+                                <!-- Tabs within a box -->
+                                <div class="charts-box">
+                                    <div class="line"></div>订单趋势
+                                </div>
+                                
+                                <div class="tab-content no-padding">
+                                    <!-- Morris chart - Sales -->
+                                    <div class="chart tab-pane active" id="line-chart" style="position: relative; height: 230px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1735213573999"><div style="position: relative; width: 381px; height: 230px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="381" height="230" style="position: absolute; left: 0px; top: 0px; width: 381px; height: 230px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 256px; top: 99px; pointer-events: none;">12-26<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#3fb1e3;"></span>0</div></div>
+                                    
+                                </div>
+                            </div>
+                    </div>
+                    <div class="box-4-2">
+                        <div class="nav-tabs-custom charts-custom">
+                                <!-- Tabs within a box -->
+                                
+                                <div class="charts-box">
+                                    <div class="line"></div>用户趋势
+                                </div>
+                                <div class="tab-content no-padding">
+                                    <!-- Morris chart - Sales -->
+                                    <div class="chart tab-pane active" id="line-user-chart" style="position: relative; height: 230px; -webkit-tap-highlight-color: transparent; user-select: none;" _echarts_instance_="ec_1735213574000"><div style="position: relative; width: 381px; height: 230px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="381" height="230" style="position: absolute; left: 0px; top: 0px; width: 381px; height: 230px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1), top 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 254px; top: 117px; pointer-events: none;">12-26<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#3fb1e3;"></span>0</div></div>
+                                    
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="newbox-5-1">
+                    <div class="box-6-each single-1">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-1.png" alt="">今日已服务
+                        </div>
+                        <div class="box-6-each-number">0</div>
+
+                    </div>
+                    <div class="box-6-each single-3">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-4.png" alt="">今日待服务
+                        </div>
+                        <div class="box-6-each-number">0</div>
+
+                    </div>
+                    <div class="box-6-each single-5">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-6.png" alt="">后日待服务
+                        </div>
+                        <div class="box-6-each-number">0</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-2">
+                <div class="newbox-5-1">
+                    <div class="box-6-each single-2">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-2.png" alt="">昨日已服务
+                        </div>
+                        <div class="box-6-each-number">0</div>
+
+                    </div>
+                    <div class="box-6-each single-4">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-3.png" alt="">明日待服务
+                        </div>
+                        <div class="box-6-each-number">0</div>
+                    </div>
+                    <div class="box-6-each single-6">
+                        <div class="box-6-each-title">
+                            <img class="box-6-each-title-img" src="/assets/addons/service/image/single-5.png" alt="">售后订单
+                        </div>
+                        <div class="box-6-each-number">0</div>
+                    </div>
+                </div>
+
+                <div class="box-5">
+                    <div class="box-5-each">
+                        <div class="box-5-text">
+                            <div class="today">今日订单</div>
+                            <div class="number-b">0</div>
+
+                        </div>
+                        <div class="box-5-img">
+                            <img class="img-box-5-img" src="/assets/addons/service/image/trend-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="box-5-each">
+                        <div class="box-5-text">
+                            <div class="today">今日用户</div>
+                            <div class="number-b">0</div>
+
+                        </div>
+                        <div class="box-5-img">
+                            <img class="img-box-5-img" src="/assets/addons/service/image/trend-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="box-5-each">
+                        <div class="box-5-text">
+                            <div class="today">今日充值（元）</div>
+                            <div class="number-b">0</div>
+                        </div>
+                        <div class="box-5-img">
+                            <img class="img-box-5-img" src="/assets/addons/service/image/trend-3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="app" class="floor1-box"><div class="flex-1 flex-rank"><div class="box-7"><div class="box-3-head"><div class="title"><span class="rod"></span> 服务销量排行
+                        </div> <div id="list1" class="tags-box"><span class="tags-box-span" style="border-radius: 6px 0px 0px 6px;">日</span><span class="tags-box-span">月</span><span class="tags-box-span">年</span><span class="tags-box-span curtag1" style="border-radius: 0px 6px 6px 0px;">总</span></div></div> <div class="list-box"><div class="title-box"><div class="title-1">排名</div> <div class="title-2">项目名</div> <div class="title-3">订单量</div> <div class="title-4">价格</div></div> <!----> <!----> <!----> <div class="overflow-box"><div class="content-box"><div class="title-1">1</div> <div class="title-2">8888</div> <div class="title-3">2</div> <div class="title-4">0.00</div></div> <div class="content-box"><div class="title-1">2</div> <div class="title-2">4532453</div> <div class="title-3">1</div> <div class="title-4">1.00</div></div></div></div></div> <div class="box-7"><div class="box-3-head"><div class="title"><span class="rod"></span> 城市订单排行
+                        </div> <div id="list2" class="tags-box"><span class="tags-box-span curtag1" style="border-radius: 6px 0px 0px 6px;">日</span><span class="tags-box-span">月</span><span class="tags-box-span">年</span><span class="tags-box-span" style="border-radius: 0px 6px 6px 0px;">总</span></div></div> <div class="list-box"><div class="title-box"><div class="title-1">排名</div> <div class="title-2">城市名</div> <div class="title-3">订单量</div> <div class="title-4">金额</div></div> <div class="overflow-box"><div class="content-box"><div class="title-1">1</div> <div class="title-2">郑州市</div> <div class="title-3">3</div> <div class="title-4">1.00</div></div></div> <!----> <!----> <!----></div></div></div> <div class="flex-2 flex-rank"><div class="box-7"><div class="box-3-head"><div class="title"><span class="rod"></span> 商家订单排行
+                        </div> <div id="list3" class="tags-box"><span class="tags-box-span curtag1" style="border-radius: 6px 0px 0px 6px;">日</span><span class="tags-box-span">月</span> <span class="tags-box-span">年</span> <span class="tags-box-span" style="border-radius: 0px 6px 6px 0px;">总</span></div></div> <div class="list-box"><div class="title-box"><div class="title-1">排名</div> <div class="title-2">商家名</div> <div class="title-3">订单量</div> <div class="title-4">金额</div></div> <div class="overflow-box"><div class="content-box"><div class="title-1">1</div> <div class="title-2">平台</div> <div class="title-3">2</div> <div class="title-4">0.00</div></div> <div class="content-box"><div class="title-1">2</div> <div class="title-2">阿贾克斯信息</div> <div class="title-3">1</div> <div class="title-4">1.00</div></div></div> <!----> <!----> <!----></div></div> <div class="box-7"><div class="box-3-head"><div class="title"><span class="rod"></span> 服务者订单排行
+                        </div> <div id="list4" class="tags-box"><span class="tags-box-span curtag1" style="border-radius: 6px 0px 0px 6px;">日</span> <span class="tags-box-span">月</span> <span class="tags-box-span">年</span> <span class="tags-box-span" style="border-radius: 0px 6px 6px 0px;">总</span></div></div> <div class="list-box"><div class="title-box"><div class="title-1">排名</div> <div class="title-2">服务人员</div> <div class="title-3">订单量</div> <div class="title-4">金额</div></div> <div class="overflow-box"><div class="content-box"><div class="title-1">1</div> <div class="title-2">刘师傅</div> <div class="title-3">2</div> <div class="title-4">0.00</div></div> <div class="content-box"><div class="title-1">2</div> <div class="title-2">赵师傅</div> <div class="title-3">1</div> <div class="title-4">1.00</div></div></div> <!----> <!----> <!----></div></div></div></div>
+
+
+    </div>
+</div>

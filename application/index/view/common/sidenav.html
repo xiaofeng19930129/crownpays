@@ -1,0 +1,18 @@
+<div class="sidebar-toggle"><i class="fa fa-bars"></i></div>
+<div class="sidenav" id="sidebar-nav">
+    {:hook('user_sidenav_before')}
+    <ul class="list-group">
+        <li class="list-group-heading">{:__('User center')}</li>
+        <li class="list-group-item {:check_nav_active('user/index')}"> <a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i> {:__('User center')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/profile')}"> <a href="{:url('user/profile')}"><i class="fa fa-user-o fa-fw"></i> {:__('Profile')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/order')}"> <a href="{:url('user/order')}"><i class="fa fa-cubes fa-fw"></i> {:__('Order center')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/member')}"> <a href="{:url('user/member')}"><i class="fa fa-user-o fa-fw"></i> {:__('Member center')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/cash')}"> <a href="{:url('user/cash')}"><i class="fa fa-usd"></i> {:__('Cash center')}</a> </li>
+        {if($user['agent'])}
+        <li class="list-group-item {:check_nav_active('user/agent')}"> <a href="{:url('user/agent')}"><i class="fa fa-user-secret"></i> {:__('Agent center')}</a> </li>
+{/if}
+         <li class="list-group-item {:check_nav_active('user/changepwd')}"> <a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i> {:__('Change password')}</a> </li>
+        <li class="list-group-item {:check_nav_active('user/logout')}"> <a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i> {:__('Sign out')}</a> </li>
+    </ul>
+    {:hook('user_sidenav_after')}
+</div>

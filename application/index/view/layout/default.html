@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {include file="common/meta" /}
+        <link href="__CDN__/assets/css/user.css?v={$Think.config.site.version|htmlentities}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-white navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{:url('/')}"><img src="/assets/img/logo.png" alt="" style="width: 30px;height: 30px;"></a>
+                    <a class="navbar-brand" href="{:url('/')}">{$site.name|htmlentities}</a>
+                  
+                </div>
+                <div class="collapse navbar-collapse" id="header-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{:url('/')}">{:__('Home')}</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="{$config['language']=='zh-cn'?'active':''}">
+                                    <a href="?ref=addtabs&lang=zh-cn">简体中文</a>
+                                </li>
+                                <li class="{$config['language']=='en'?'active':''}">
+                                    <a href="?ref=addtabs&lang=en">English</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            {if $user}
+                            <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="avatar-img"><img src="{$user.avatar|htmlentities|cdnurl}" alt=""></span>
+                                <span class="visible-xs-inline-block" style="padding:5px;">{$user.nickname} <b class="caret"></b></span>
+                            </a>
+                            {else /}
+                            <a href="{:url('user/index')}" class="dropdown-toggle" data-toggle="dropdown">{:__('Member center')} <b class="caret"></b></a>
+                            {/if}
+                            <ul class="dropdown-menu">
+                                {if $user}
+                                <li><a href="{:url('user/index')}"><i class="fa fa-user-circle fa-fw"></i>{:__('User center')}</a></li>
+                                <li><a href="{:url('user/order')}"><i class="fa fa-cubes fa-fw"></i>{:__('Order center')}</a></li>
+                                <li><a href="{:url('user/profile')}"><i class="fa fa-user-o fa-fw"></i>{:__('Profile')}</a></li>
+                                <li><a href="{:url('user/changepwd')}"><i class="fa fa-key fa-fw"></i>{:__('Change password')}</a></li>
+                                <li><a href="{:url('user/logout')}"><i class="fa fa-sign-out fa-fw"></i>{:__('Sign out')}</a></li>
+                                {else /}
+                                <li><a href="{:url('user/login')}"><i class="fa fa-sign-in fa-fw"></i> {:__('Sign in')}</a></li>
+                                <li><a href="{:url('user/register')}"><i class="fa fa-user-o fa-fw"></i> {:__('Sign up')}</a></li>
+                                {/if}
+                            </ul>
+                        </li>
+                        {if $user}
+                        <li><a href="{:url('user/member')}">{:__('Level %s Member',$user.member.level)}</a></li>
+                        <li><a href="{:url('user/member')}">&nbsp;{$user.usdt}/USDT</a></li>
+                        <li>
+                            <button class="btn btn-default rechargeNowBtn" style="margin-top:13px;">立即充值</button>
+                        </li>
+                        {/if}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="content">
+            {__CONTENT__}
+        </main>
+
+        <style>
+           
+            .contact{
+                width: 70%;
+                margin: 10px auto;
+                display: flex;
+                align-items: center;
+                
+            }
+            .contact-relate{
+                flex: 1;
+                margin: 10px 0 0 30px;
+                
+            }
+            .contact-qrcode{
+                flex: 1;
+            }
+            .agreement{
+                flex: 1;
+            }
+        </style>
+
+        <footer class="footer" style="clear:both">
+            <div class="contact">
+                <div class="contact-relate">
+                    <p >{:__('Contact Customer Service')}</p>
+                    <p class="contact-time"> {:__('Monday to Sunday')}：09:00AM-21:00PM </p>
+                    <p class="contact-email">{:__('Email')}:{$site.service_email}</p>
+                    <p class="contact-email">{:__('Mobile')}:{$site.service_mobile}</p>
+                </div>
+                <div class="contact-qrcode">
+                    <div class="item">
+                        <p style="text-align: left; width: 100%;margin-top:20px;">{:__('Customer service QR code')}</p>
+                        <img src="{$site.service_qrcde}" data-tips-image class="customerQrcode" style="height: 120px; width: 120px;">
+                    </div>
+                </div>
+                <div class="agreement">
+                    <p style="padding-left:20px;">{:__('Security and Privacy')}</p>
+                    <ul>
+                        <li class="s">{:__('Safety compliance')}</li>
+                        <li class="s"> {:__('Privacy Policy')} </li>
+                        <li class="s"> {:__('Service Agreement')} </li>
+                        <li class="s"> {:__('User Agreement')} </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="height: 1px;width: 70%;margin:0 auto;background-color: #292929;"></div>
+            <p class="copyright">Copyright&nbsp;©&nbsp;{:date("Y")} {$site.name|htmlentities} All Rights Reserved <a href="https://beian.miit.gov.cn" target="_blank">{$site.beian|htmlentities}</a></p>
+        </footer>
+
+        {include file="common/script" /}
+
+    </body>
+
+</html>
